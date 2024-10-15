@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="chickenmenu.css">
+    <link rel="icon" type="image/x-icon" href="/Image/logooo.png">
+    <title>Chicken store</title>
+</head>
+<body>
+  <div class="storebanner">
+    <!-- <img src="Image/Chicken/chikens.png" alt=""> -->
+    <h1 class="storename">Meat store</h1>
+    <h1 class="storedescription">Fresh Meat deliver in <span>minutes</span></h1>
+</div>
+
+<div class="section"></div>
+
+<script>
+  
+  const items = {
+    Chicken: [
+      { img: "https://rahath.in/wp-content/uploads/2024/03/Chicken-Medium-Pieces-1KG.png", name: "Chicken for Curry cut ", weight: '1Kg', price: "₹150" },
+  
+      { img: "https://www.meathouseindia.com/wp-content/uploads/2020/06/Chicken-with-skintop-view.png", name: "Fresh Chicken complete full", weight: '1kg', price: "₹130" },
+      { img: "https://www.meathouseindia.com/wp-content/uploads/2020/06/Chicken-with-skintop-view.png", name: "Fresh Chicken complete full", weight: '500g', price: "₹70" },
+      { img: "https://www.bigbasket.com/media/uploads/p/l/102587_8-fresho-chicken-boneless.jpg", name: "Chicken boneless for gymer", weight: '1kg', price: "₹190" },
+      { img: "https://www.bigbasket.com/media/uploads/p/l/102587_8-fresho-chicken-boneless.jpg", name: "Chicken boneless for gymer", weight: '500g', price: "₹100" },
+      { img: "https://www.urbangroc.com/wp-content/uploads/2021/09/chicken-Drum-Stick-1.jpg.webp", name: "Fresh Chicken Leg Piece", weight: '5pc', price: "₹150" },
+      { img: "https://s.alicdn.com/@sc04/kf/A9286f89374094e1bad1df4fa93e5f045o.jpg_300x300.jpg", name: "Chicken Breast for gymer", weight: '1kg', price: "₹200" },
+      { img: "https://s.alicdn.com/@sc04/kf/A9286f89374094e1bad1df4fa93e5f045o.jpg_300x300.jpg", name: "Chicken Breast for gymer", weight: '500g', price: "₹100" },
+      { img: "https://www.choosemycart.com/wp-content/uploads/2021/07/hen.jpg", name: "Desi Chicken ", weight: '1kg', price: "₹250" },
+     
+    
+
+    ],
+    Fish: [
+    { img: "https://www.bigbasket.com/media/uploads/p/l/40119261_2-fresho-rohu-cut-pieces-medium.jpg", name: "Fresh Rohu Fish", weight: '1Kg', price: "₹200" },
+    { img: "https://meggro.com/wp-content/uploads/2022/07/Live-Catfish.webp", name: "Fresh Cat Fish", weight: '1kg', price: "₹150" },
+    { img: "https://www.bigbasket.com/media/uploads/p/l/40119261_2-fresho-rohu-cut-pieces-medium.jpg", name: "Fresh Rohu Fish", weight: '500g', price: "₹100" },
+    { img: "https://freshcatch.ae/wp-content/uploads/2020/01/catfish-300x300.png", name: "Fresh Cat Fish", weight: '500g', price: "₹130" },
+    { img: "https://jamunafoods.com/wp-content/uploads/2020/12/batashi-600x600.jpg", name: "Fresh Keski Fish", weight: '500g', price: "₹200" },
+    { img: "https://www.bigbasket.com/media/uploads/p/l/40119261_2-fresho-rohu-cut-pieces-medium.jpg", name: "Fresh Rohu Fish", weight: '750g', price: "₹150" },
+    { img:"https://jamunafoods.com/wp-content/uploads/2020/12/batashi-600x600.jpg", name: "Fresh Keski Fish", weight: '500g', price: "₹200" },
+    { img:  "https://meggro.com/wp-content/uploads/2022/07/Live-Catfish.webp", name: "Fresh Cat Fish", weight: '750g', price: "₹100" },
+    { img: "https://rukminim2.flixcart.com/image/850/1000/xif0q/seafood/k/l/n/dry-fish-dry-prawns-big-dry-shrimp-jhinga-prawn-zmz-original-imagrygfvq77bamm.jpeg?q=90&crop=false", name: "Fresh Jingha Fish", weight: '100g', price: "₹50" },
+ 
+    ],
+    Meat: [
+    { img: "https://storage.googleapis.com/shy-pub/60613/1695888734141_SKU-1564_0.jpg", name: "Freash Goat Meat 1Kg", weight: '', price: "₹700" },
+    { img: "https://storage.googleapis.com/shy-pub/60613/1695888734141_SKU-1564_0.jpg", name: "Freash Goat Meat 500g", weight: '', price: "₹350" },
+    { img: "https://saadmeatscanton.com/cdn/shop/products/Untitleddesign_9_6352d858-2f4e-4a5f-b532-a805bc48edf2.png?v=1632066550", name: "Fresh Goat Meat Leg", weight: '1Kg', price: "₹300" },
+ 
+    { img: "https://storage.googleapis.com/shy-pub/60613/1695888734141_SKU-1564_0.jpg", name: "Freash Goat Meat 1Kg", weight: '', price: "₹700" },
+    { img: "https://storage.googleapis.com/shy-pub/60613/1695888734141_SKU-1564_0.jpg", name: "Freash Goat Meat 500g", weight: '', price: "₹350" },
+    { img: "https://saadmeatscanton.com/cdn/shop/products/Untitleddesign_9_6352d858-2f4e-4a5f-b532-a805bc48edf2.png?v=1632066550", name: "Fresh Goat Meat Leg", weight: '1Kg', price: "₹300" },
+ 
+    { img: "https://storage.googleapis.com/shy-pub/60613/1695888734141_SKU-1564_0.jpg", name: "Freash Goat Meat 1Kg", weight: '', price: "₹700" },
+    { img: "https://storage.googleapis.com/shy-pub/60613/1695888734141_SKU-1564_0.jpg", name: "Freash Goat Meat 500g", weight: '', price: "₹350" },
+    { img: "https://saadmeatscanton.com/cdn/shop/products/Untitleddesign_9_6352d858-2f4e-4a5f-b532-a805bc48edf2.png?v=1632066550", name: "Fresh Goat Meat Leg", weight: '1Kg', price: "₹300" },
+ 
+    // { img: "Image/chicken/", name: "", weight: '1Kg', price: "₹" },
+    // { img: "Image/chicken/", name: "", weight: '1Kg', price: "₹" },
+    // { img: "Image/chicken/", name: "", weight: '1Kg', price: "₹" },
+    // { img: "Image/chicken/", name: "", weight: '1Kg', price: "₹" },
+    // { img: "Image/chicken/", name: "", weight: '1Kg', price: "₹" },
+
+    
+    ],
+    Eggs: [
+    { img: "https://images.jdmagicbox.com/quickquotes/images_main/paper-egg-tray-2216899931-k6kt2hv0.jpg", name: "Egg Tray", weight: '1Tray', price: "₹150" },
+    { img: "https://images.jdmagicbox.com/quickquotes/images_main/paper-egg-tray-2216899931-k6kt2hv0.jpg", name: "Egg Tray", weight: '1Tray', price: "₹150" },
+    { img: "https://images.jdmagicbox.com/quickquotes/images_main/paper-egg-tray-2216899931-k6kt2hv0.jpg", name: "Egg Tray", weight: '1Tray', price: "₹150" },
+    { img: "https://images.jdmagicbox.com/quickquotes/images_main/paper-egg-tray-2216899931-k6kt2hv0.jpg", name: "Egg Tray", weight: '1Tray', price: "₹150" },
+    { img: "https://images.jdmagicbox.com/quickquotes/images_main/paper-egg-tray-2216899931-k6kt2hv0.jpg", name: "Egg Tray", weight: '1Tray', price: "₹150" },
+    { img: "https://images.jdmagicbox.com/quickquotes/images_main/paper-egg-tray-2216899931-k6kt2hv0.jpg", name: "Egg Tray", weight: '1Tray', price: "₹150" },
+    { img: "https://images.jdmagicbox.com/quickquotes/images_main/paper-egg-tray-2216899931-k6kt2hv0.jpg", name: "Egg Tray", weight: '1Tray', price: "₹150" },
+    { img: "https://images.jdmagicbox.com/quickquotes/images_main/paper-egg-tray-2216899931-k6kt2hv0.jpg", name: "Egg Tray", weight: '1Tray', price: "₹150" },
+    { img: "https://images.jdmagicbox.com/quickquotes/images_main/paper-egg-tray-2216899931-k6kt2hv0.jpg", name: "Egg Tray", weight: '1Tray', price: "₹150" },
+    // { img: "Image/chicken/whitegg.png", name: "Egg ", weight: '6 pc', price: "₹48" },
+    // { img: "Image/chicken/egg-trays1.jpg", name: "Egg Tray", weight: '1Tray', price: "₹150" },
+    // { img: "Image/chicken/whitegg.png", name: "Egg ", weight: '6 pc', price: "₹48" },
+   
+     
+    ],
+    Masala: [
+    { img: "Image/masalasss.png", name: "Everest Chicken Masala", weight: '100g', price: "₹92" },
+    { img: "https://m.media-amazon.com/images/I/71usqRAZlSL.jpg", name: "Catch Chicken Masala", weight: '100g', price: "₹59" },
+    { img: "https://m.media-amazon.com/images/I/81sNx-neOaL.jpg", name: "MDH Chicken Masala", weight: '100g', price: "₹73" },
+    { img: "https://m.media-amazon.com/images/I/81cHKbEesHL._AC_UF894,1000_QL80_.jpg", name: "Everest Tandoori Chicken Masala Powder", weight: '100g', price: "₹70" },
+    { img: "https://m.media-amazon.com/images/I/81UH7pyz+cL.jpg", name: "Everest Meat Masala Powder", weight: '100g', price: "₹62" },
+    { img: "https://www.netmeds.com/images/product-v1/600x600/909649/meat_masala_100_gm_0_0.jpg", name: "Catch Meat Masala", weight: '100g', price: "₹65" },
+    { img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJlPrzv450HYocQMAdjGsEdGsqXPubmrsJAA&s", name: "MDH Powder - Tandoori Chicken Masala", weight: '100g', price: "₹94" },
+    { img: "https://www.bigbasket.com/media/uploads/p/l/268943-2_2-everest-garam-masala.jpg", name: "Everest Garam Masala", weight: '100g', price: "₹75" },
+    { img: "https://og-mart.in/cdn/shop/files/GARAM-01-FRONT_1280x.jpg?v=1695104010", name: "MDH Garam Masala", weight: '100g', price: "₹95" },
+    { img: "https://m.media-amazon.com/images/I/817rZQ5gILL._SL1500_.jpg", name: "Everest Powder - Fish Curry Masala", weight: '50g', price: "₹47" },
+],
+    Oil: [
+      
+       { img: "Image/oil.png", name: "Fortune Mustard Oil", weight: "1 Litre", price: "₹165" },
+       { img: "Image/oil.png", name: "FOrtune Mustard Oil", weight: "500ml", price: "₹75" },
+        { img: "Image/spyahealth.jpg", name: " Fortune Soyabean Oil ", weight: "Pouch 1 Litre", price: "₹133" },
+       
+        { img: "Image/kachi.webp", name: "Fortune Premium Kachi Ghani Oil", weight: "Pouch 1 Litre", price: "₹140" },
+        { img: "Image/safolayellow1.webp", name: "Saffola Active Refined Oil P", weight: "Pouch 1 Litre", price: "₹135" },
+        { img: "Image/safolayellow.webp", name: "Saffola Gold Refined Oil", weight: "Pouch 1L", price: "₹145" },
+         { img: "Image/chicken/61TTCzxGUbS._SL1200_.jpg", name: "Dhara Kachhi Ghani Mustard Oil ", weight: "Pouch 1 Litre", price: "₹140" }
+],
+    Chickenmasala: [
+      
+    
+    ],
+    Chickenboneles: [
+ 
+     
+
+    ],
+ 
+  };
+
+  
+
+  const section = document.querySelector(".section");
+
+  function displayItems(category) {
+  section.innerHTML = ""; // Clear previous items
+  items[category].forEach(item => {
+      section.innerHTML += `
+          <div class="box">
+              <img src="${item.img}" alt="${item.name}" onclick="openProductDetails('${item.img}', '${item.name}', '${item.weight}', '${item.price.replace('₹', '')}')">
+              <h3>${item.name}</h3>
+              <h6>${item.weight}</h6>
+              <h5>${item.price}</h5>
+              <button class="add-button" data-name="${item.name}" data-price="${item.price.replace('₹', '')}" data-weight="${item.weight}">ADD</button>
+          </div>
+      `;
+  });
+
+  document.querySelectorAll('.add-button').forEach(button => {
+      button.addEventListener('click', function() {
+          const itemName = this.getAttribute('data-name');
+          const itemPrice = parseFloat(this.getAttribute('data-price'));
+          const itemWeight = this.getAttribute('data-weight');
+          const itemImg = this.parentNode.querySelector('img').getAttribute('src');
+          addItemToCart(itemName, itemPrice, itemImg, itemWeight);
+      });
+  });
+}
+
+
+function openProductDetails(img, name, weight, price) {
+  const url = `product-details.html?img=${encodeURIComponent(img)}&name=${encodeURIComponent(name)}&weight=${encodeURIComponent(weight)}&price=${encodeURIComponent(price)}`;
+  window.location.href = url;
+}
+
+
+// ---------------------------------------------------------------------------------------------GRAM PROBLEM SOLVED__________________________________________
+function addItemToCart(itemName, itemPrice, itemImg, itemWeight) {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const existingItem = cart.find(item => item.name === itemName);
+
+  if (existingItem) {
+      existingItem.count++;
+  } else {
+      cart.push({
+          name: itemName,
+          price: itemPrice,
+          img: itemImg,
+          weight: itemWeight, // Ensure itemWeight is a string or number
+          count: 1
+      });
+  }
+
+  localStorage.setItem('cart', JSON.stringify(cart));
+  document.dispatchEvent(new Event('cartUpdated'));
+}
+
+
+// ---------------------------------------------------------------------------------------------GRAM PROBLEM SOLVED__________________________________________
+function updateFooterCart() {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const cartCount = cart.reduce((count, item) => count + item.count, 0);
+  const totalPrice = cart.reduce((total, item) => total + (item.price * item.count), 0);
+
+  document.getElementById('cart-count').innerText = cartCount;
+  document.getElementById('total-price').innerText = `₹${totalPrice}`;
+}
+
+displayItems('Chicken');  // Initial display
+
+fetch('footer.html')
+  .then(response => response.text())
+  .then(data => {
+    document.body.insertAdjacentHTML('beforeend', data);
+    const script = document.createElement('script');
+    script.src = 'footer.js';
+    script.onload = () => {
+      updateFooterCart();
+      document.getElementById('view-cart').addEventListener('click', () => {
+        window.location.href = 'AddtoCart.html';
+      });
+      document.addEventListener('cartUpdated', updateFooterCart);
+    };
+    document.body.appendChild(script);
+  });
+  
+// ------------------------------------------------------------------------------Quick View Cart integration------------------------------------------------
+</script> 
+
+<div class="scrolling-wrapper">
+    <div class="card" onclick="displayItems('Chicken')"><img src="https://chickenwala.co.in/adminpanel/image/boneless.webp"alt="Chicken"class="menuhover"></div>
+    <div class="card" onclick="displayItems('Eggs')"><img src="https://www.howmuchisin.com/produce_converters_app/vegetables_large/egg.png"alt="Eggs"class="menuhover"></div>
+    <div class="card" onclick="displayItems('Fish')"><img src= "https://www.bigbasket.com/media/uploads/p/l/40178465_2-fresho-rohu-whole-preservative-free.jpg"alt="Fish"class="menuhover"></div>
+    <div class="card" onclick="displayItems('Meat')"><img src="https://static.vecteezy.com/system/resources/previews/036/094/516/non_2x/ai-generated-raw-goat-shoulder-meat-on-a-plate-on-a-transparent-background-free-png.png"alt="Chicken"class="menuhover"></div>
+    <div class="card" onclick="displayItems('Masala')"><img src="Image/masalasss.png"alt="Masala"class="menuhover"></div>
+    <div class="card" onclick="displayItems('Oil')"><img src= "Image/oil.png"alt="Oi"class="menuhover"></div>
+ 
+    
+    <!-- <div class="card" onclick="displayItems('household')"><img src="Image/oil.webp" alt="Household"></div> -->
+</div>
+
+</body>
+</html>

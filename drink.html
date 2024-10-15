@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="drink.css">
+    <link rel="icon" type="image/x-icon" href="/Image/logooo.png">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TBT7HR0C4N">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TBT7HR0C4N');
+</script>
+    <title>Beverages | Delivery in minutes</title>
+</head>
+<body>
+  <div class="storebanner">
+    <!-- <img src="Image/food/momobanner.webp" alt=""> -->
+   
+</div>
+
+<div class="section"></div>
+
+<script>
+  
+  const items = {
+   
+    Drink: [
+      { img: "https://m.media-amazon.com/images/I/51zVMn8GdxL.jpg", name: " Nescafe Ready To Drink Latte Can", weight: '180ml', price: "₹65" },
+      { img: "https://www.jiomart.com/images/product/original/490809341/coca-cola-300-ml-product-images-o490809341-p490809341-0-202210071748.jpg?im=Resize=(1000,1000)", name: " Coca Cola  Can", weight: '300ml', price: "₹40" },
+      { img: "https://www.jiomart.com/images/product/original/490809343/sprite-300-ml-can-product-images-o490809343-p490809343-0-202203151402.jpg?im=Resize=(420,420)", name: "  Sprite Can", weight: '300ml', price: "₹40" },
+      { img: "https://5.imimg.com/data5/SELLER/Default/2024/5/415667332/JB/MX/BW/142192266/250-ml-mountain-dew-cold-drinks-500x500.jpg", name: "Mountain Dew Soft Drink Can  ", weight: '250ml', price: "₹40" },
+      { img: "https://www.bigbasket.com/media/uploads/p/m/180961-3_5-red-bull-energy-drink.jpg", name: "  Redbull Energy Drink can", weight: '250ml', price: "₹99" },
+      { img: "https://www.bigbasket.com/media/uploads/p/xl/251006_13-sprite-soft-drink-lime-flavoured.jpg", name: "  Sprite  Bottle 750ml", weight: '750ml', price: "₹45" },
+      { img: "https://5.imimg.com/data5/EB/IC/QX/SELLER-48652903/750ml-coca-cola-soft-drink-500x500.jpg", name: " Cocacola Soft Drink 750ml", weight: '750ml', price: "₹45" },
+      // { img: "Image/cafe/265874_5-mountain-dew-soft-drink.webp", name: "Mountain Dew soft drink  ", weight: '750ml', price: "₹45" },
+      { img: "https://m.media-amazon.com/images/I/51J54vvDdJL.jpg", name: " Pepsi soft drink 750ml ", weight: '750ml', price: "₹45" },
+      { img: "https://www.bigbasket.com/media/uploads/p/xl/251014_12-thums-up-soft-drink.jpg", name: " Thums Up Soft Drink, 750 ml", weight: '750ml', price: "₹45" },
+      { img: "https://m.media-amazon.com/images/I/61yecBpCDhL.jpg", name: " Thums Up Soft Drink Can, 750 ml", weight: '750ml', price: "₹45" },
+   
+    
+ 
+
+     
+    ],
+  
+
+ 
+  };
+
+  
+
+  const section = document.querySelector(".section");
+
+  function displayItems(category) {
+  section.innerHTML = ""; // Clear previous items
+  items[category].forEach(item => {
+      section.innerHTML += `
+          <div class="box">
+              <img src="${item.img}" alt="${item.name}" onclick="openProductDetails('${item.img}', '${item.name}', '${item.weight}', '${item.price.replace('₹', '')}')">
+              <h3>${item.name}</h3>
+              <h6>${item.weight}</h6>
+              <h5>${item.price}</h5>
+              <button class="add-button" data-name="${item.name}" data-price="${item.price.replace('₹', '')}" data-weight="${item.weight}">ADD</button>
+          </div>
+      `;
+  });
+
+  document.querySelectorAll('.add-button').forEach(button => {
+      button.addEventListener('click', function() {
+          const itemName = this.getAttribute('data-name');
+          const itemPrice = parseFloat(this.getAttribute('data-price'));
+          const itemWeight = this.getAttribute('data-weight');
+          const itemImg = this.parentNode.querySelector('img').getAttribute('src');
+          addItemToCart(itemName, itemPrice, itemImg, itemWeight);
+      });
+  });
+}
+
+
+function openProductDetails(img, name, weight, price) {
+  const url = `product-details.html?img=${encodeURIComponent(img)}&name=${encodeURIComponent(name)}&weight=${encodeURIComponent(weight)}&price=${encodeURIComponent(price)}`;
+  window.location.href = url;
+}
+
+
+// ---------------------------------------------------------------------------------------------GRAM PROBLEM SOLVED__________________________________________
+function addItemToCart(itemName, itemPrice, itemImg, itemWeight) {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const existingItem = cart.find(item => item.name === itemName);
+
+  if (existingItem) {
+      existingItem.count++;
+  } else {
+      cart.push({
+          name: itemName,
+          price: itemPrice,
+          img: itemImg,
+          weight: itemWeight, // Ensure itemWeight is a string or number
+          count: 1
+      });
+  }
+
+  localStorage.setItem('cart', JSON.stringify(cart));
+  document.dispatchEvent(new Event('cartUpdated'));
+}
+
+
+// ---------------------------------------------------------------------------------------------GRAM PROBLEM SOLVED__________________________________________
+function updateFooterCart() {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const cartCount = cart.reduce((count, item) => count + item.count, 0);
+  const totalPrice = cart.reduce((total, item) => total + (item.price * item.count), 0);
+
+  document.getElementById('cart-count').innerText = cartCount;
+  document.getElementById('total-price').innerText = `₹${totalPrice}`;
+}
+
+displayItems('Drink');  // Initial display
+
+fetch('footer.html')
+  .then(response => response.text())
+  .then(data => {
+    document.body.insertAdjacentHTML('beforeend', data);
+    const script = document.createElement('script');
+    script.src = 'footer.js';
+    script.onload = () => {
+      updateFooterCart();
+      document.getElementById('view-cart').addEventListener('click', () => {
+        window.location.href = 'AddtoCart.html';
+      });
+      document.addEventListener('cartUpdated', updateFooterCart);
+    };
+    document.body.appendChild(script);
+  });
+  
+// ------------------------------------------------------------------------------Quick View Cart integration------------------------------------------------
+</script> 
+
+<!-- <div class="scrolling-wrapper">
+    <div class="card" onclick="displayItems('Coffee')"><img src="Image/cafes.webp"alt="Chowmin"class="menuhover"></div>
+    <div class="card" onclick="displayItems('Tea')"><img src="Image/Cafe/tea.png"alt="Momos"class="menuhover"></div>
+    <div class="card" onclick="displayItems('Pizza')"><img src= "Image/Cafe/pizza.webp"alt="Chicken chilli"class="menuhover"></div>
+    <div class="card" onclick="displayItems('Cake')"><img src="Image/Cafe/detail_bb_Carrot_Cake.webp"alt="Pannerchilli"class="menuhover"></div>
+    <div class="card" onclick="displayItems('Drink')"><img src="https://thomsonline.in/wp-content/uploads/2019/08/pepsi-can-250ml.gif"alt="Chaat"class="menuhover"></div>
+
+ 
+    
+
+</div> -->
+
+</body>
+</html>

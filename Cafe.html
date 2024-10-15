@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Cafe.css">
+    <link rel="icon" type="image/x-icon" href="/Image/logooo.png">
+    <title>Buy coffee | | Delivery in minutes</title>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TBT7HR0C4N">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TBT7HR0C4N');
+</script>
+</head>
+<body>
+  <div class="storebanner">
+
+</div>
+
+<div class="section"></div>
+
+<script>
+  
+  const items = {
+    Coffee: [
+     { img: "https://png.pngtree.com/png-clipart/20231018/original/pngtree-espresso-coffee-cup-isolated-png-image_13342543.png", name: " Expresso  Coffee ", weight: 'Strong Coffee without Milk', price: "₹109" },
+      { img: "https://www.sfu.ca/siat/student_projects/iat339_2022/eyon/Espresso/img/americano-396.png", name: "Americano coffee", weight: 'Strong Coffee without Milk', price: "₹109" },
+      { img: "https://png.pngtree.com/png-vector/20240219/ourmid/pngtree-cup-of-hot-cappuccino-coffee-on-white-background-png-image_11752259.png", name: "cappuccino Hot coffee", weight: 'Your Daily Latte', price: "₹119" },
+      { img: "https://static.vecteezy.com/system/resources/previews/023/742/396/non_2x/latte-coffee-isolated-illustration-ai-generative-free-png.png", name: "Hot Coffee Latte  ", weight: 'Your Daily Latte, Made to Love', price: "₹99" },
+      { img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrEF_lNNmDvDQS_zllJTLWqTRskZwtn5ApOg&s", name: "Caramel Latte", weight: 'Contains Milk, caramel with love', price: "₹99" },
+      { img: "https://png.pngtree.com/png-clipart/20231016/original/pngtree-cafe-mocha-coffee-ingredient-png-image_13324345.png", name: "Coffee Mocha", weight: 'Your daily speical mocha to love', price: "₹99" },
+      { img: "https://www.foodness.it/wp-content/uploads/2018/09/Cioccolata-classica-IN-EVIDENZA.png", name: "  Hot chocolate coffee", weight: 'Contains Milk Chocolate', price: "₹109" },
+      { img: "https://blenz.com/wp-content/uploads/2023/06/blenz-iced-cafe-latte.png", name: "Iced Latte Coffee", weight: 'Fresh Iced Coffee with Milk', price: "₹159" },
+      { img: "https://static.vecteezy.com/system/resources/previews/027/145/679/non_2x/iced-caramel-latte-topped-with-whipped-cream-and-caramel-sauce-perfect-for-drink-catalog-ai-generated-png.png", name: " Iced Caramel Latte ", weight: 'Contains Caramel & milk', price: "₹179" },
+      { img: "https://cdn.greensoft.mn/uploads/site/1200/product/new_2d5743de68e07b82ab4bcd322b93e625dd4a624e.png", name: " Iced Americano ", weight: 'Iced americano Coffee without Milk ', price: "₹149" },
+      { img: "https://png.pngtree.com/png-vector/20240201/ourmid/pngtree-blue-hawaii-summer-cocktail-and-mint-leaves-png-image_11528075.png", name: " Blue Iced Ocean Mojito ", weight: 'Time to drink mojito', price: "₹169" },
+      { img: "https://static.vecteezy.com/system/resources/previews/035/674/146/non_2x/ai-generated-mojito-cocktail-with-lemon-and-mint-free-png.png", name: " Mint Iced Lemon Mojito ", weight: ' Time to drink mojito', price: "₹169" },
+     
+    ],
+    Pizza: [
+    { img: "https://vrindaspizzeria.com/wp-content/uploads/2023/10/Corn-Delight-a.png", name: "Cheese Corn ", weight: 'Sweet Corn, Onion, Extra Cheese', price: "₹269" },
+      { img: "https://bkpizza.nyc/wp-content/uploads/2021/06/margherita-pizza-1.png", name: " Margherita Pizza ", weight: 'Fresh Basil Leaves, Tomato, Cheese, Sauce', price: "₹209" },
+      { img: "https://static.wixstatic.com/media/11062b_effbaa8722ee45aea2a094511b205ae7~mv2.jpg/v1/fill/w_480,h_480,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_effbaa8722ee45aea2a094511b205ae7~mv2.jpg", name: " Extra Topping Pizza", weight: 'Toppings Pizza', price: "₹99" },
+      { img: "https://cheesewheelz.com/wp-content/uploads/2017/08/slider11.png", name: " Mushroom Cheese ", weight: 'Fresh Mushrooms, Tomato, Cheese, Sauce', price: "₹269" },
+      { img: "https://pandapizza.ca/wp-content/uploads/2023/03/Karahi-Paneer-Pizza-min.png", name: " Paneer Cheese ", weight: 'Fresh Local Cheese, Tomato, Onion, Capsicum', price: "₹369" },
+      { img: "https://static.vecteezy.com/system/resources/thumbnails/041/326/141/small_2x/ai-generated-cheese-pizza-isolated-on-transparent-background-png.png", name: "Plain Cheese", weight: 'Fresh soft spun cheese pizza', price: "₹209" },
+      
+      { img: "https://static.takeaway.com/images/restaurants/de/OR1NP7R1/products/chicken_curry.png?timestamp=1725708279", name: "Spicy Tropical", weight: 'Jalapeno, Onion, Capsicum and Pine Apple', price: "₹369"},
+      { img: "https://www.mexicangoldenchicken.com/wp-content/uploads/2023/11/mushroom-pizza-1.webp", name: "Veggie Pizza", weight: 'Mushroom, tomato, onion, capsicum, Olives', price: "₹369" },
+      { img: "https://jow.com/_next/image?url=https%3A%2F%2Fstatic.jow.fr%2F880x880%2Frecipes%2FoiVmWGWutltFYQ.png&w=2560&q=100", name: "Pesto Pizza", weight: 'Pesto Sauce, Tomato, Black Olives, Cheese', price: "₹369" },
+
+  
+    
+  ],
+
+    Cake: [
+    { img: "https://www.edwardsdesserts.com/cdn/shop/files/LemonSlice_1200x1200_cbea7fd6-a5ab-4eca-a086-9b949458e0a7.png?v=1712277920&width=320", name: " Lemon Cream Pie ", weight: 'Sweet and sour Lemon Filling in a Biscuit Crust', price: "₹99" },
+    { img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhj4J5lrPhxsUUwkZ0z5MWqxOHIUsx4zmQWw&s", name: "Banoffee Pie Cake", weight: 'Banana Toffee in Coconut Crust', price: "₹179" },
+      { img: "https://img.freepik.com/premium-photo/there-is-piece-chocolate-cake-plate-with-fork-generative-ai_927978-15347.jpg", name: " Hot Mocha Brownie  ", weight: 'Gluton free', price: "₹99" },
+      { img: "https://sweetsfromtheearth.com/wp-content/uploads/2019/03/GF-Peanut-Butter-Brownie-Bulk2.jpeg", name: "Sweet Peanut Cake ", weight: 'Delite peanut cake ', price: "₹79" },
+      { img: "https://novellaskitchen.com/wp-content/uploads/2021/04/carrot-cake-9-inch-1.jpg", name: " Carrot Cake ", weight: 'Moist Creamy Frosting Cake ', price: "₹119" },
+      { img: "https://png.pngtree.com/png-vector/20231104/ourmid/pngtree-frosting-fantasy-a-moist-vanilla-cake-slice-delight-png-image_10474158.png", name: " Cheese Cake", weight: 'Moist Creamy Frosting Cake', price: "₹99" },
+      { img: "https://www.sweetestmenu.com/wp-content/uploads/2017/11/dairyfreechocolatecake7.jpg", name: "Dark Chocolate Brownie  ", weight: 'Gluton free', price: "₹139" },
+      { img: "https://sodiedocesusa.com/metrowest/wp-content/uploads/sites/2/2022/08/20412_fotos_58-maracuja_bolo_fatia_540x400px58-300x300.png", name: "Pine Apple Cake  ", weight: 'Fresh delite cake enjoyment', price: "₹79" },
+      { img: "https://png.pngtree.com/png-vector/20240605/ourmid/pngtree-a-slice-of-coconut-cream-pie-on-white-plate-png-image_12631923.png", name: "Coconut Pie Cake", weight: 'Pie made with Fresh Coconut and Milk', price: "₹149" },
+  ],
+
+    Drink: [
+      { img: "https://m.media-amazon.com/images/I/51zVMn8GdxL.jpg", name: " Nescafe Ready To Drink Latte Can", weight: '180ml', price: "₹65" },
+      { img: "https://www.jiomart.com/images/product/original/490809341/coca-cola-300-ml-product-images-o490809341-p490809341-0-202210071748.jpg?im=Resize=(1000,1000)", name: " Coca Cola  Can", weight: '300ml', price: "₹40" },
+      { img: "https://www.jiomart.com/images/product/original/490809343/sprite-300-ml-can-product-images-o490809343-p490809343-0-202203151402.jpg?im=Resize=(420,420)", name: "  Sprite Can", weight: '300ml', price: "₹40" },
+      { img: "https://5.imimg.com/data5/SELLER/Default/2024/5/415667332/JB/MX/BW/142192266/250-ml-mountain-dew-cold-drinks-500x500.jpg", name: "Mountain Dew Soft Drink Can  ", weight: '250ml', price: "₹40" },
+      { img: "https://www.bigbasket.com/media/uploads/p/m/180961-3_5-red-bull-energy-drink.jpg", name: "  Redbull Energy Drink can", weight: '250ml', price: "₹99" },
+      { img: "https://www.bigbasket.com/media/uploads/p/xl/251006_13-sprite-soft-drink-lime-flavoured.jpg", name: "  Sprite  Bottle 750ml", weight: '750ml', price: "₹45" },
+      { img: "https://5.imimg.com/data5/EB/IC/QX/SELLER-48652903/750ml-coca-cola-soft-drink-500x500.jpg", name: " Cocacola Soft Drink 750ml", weight: '750ml', price: "₹45" },
+     
+      { img: "https://m.media-amazon.com/images/I/51J54vvDdJL.jpg", name: " Pepsi soft drink 750ml ", weight: '750ml', price: "₹45" },
+      { img: "https://www.bigbasket.com/media/uploads/p/xl/251014_12-thums-up-soft-drink.jpg", name: " Thums Up Soft Drink, 750 ml", weight: '750ml', price: "₹45" },
+      { img: "https://m.media-amazon.com/images/I/61yecBpCDhL.jpg", name: " Thums Up Soft Drink Can, 750 ml", weight: '750ml', price: "₹45" },
+   
+    
+ 
+
+     
+    ],
+    Tea: [
+ 
+    { img: "https://cdn.intelligencebank.com/au/share/NOrD/1VN0z/eAXp0/preset=pB6BA/T125AE015_earl_grey_brewed_loose_leaf", name: " Early green tea ", weight: 'Wake Up to Smooth, Tea Bliss ', price: "₹99" },
+      { img: "https://atlas-content-cdn.pixelsquid.com/stock-images/milk-glass-Od917L2-600.jpg", name: "Steamed Cow Milk ", weight: 'Fresh Vegan Milk', price: "₹159" },
+      { img: "https://static.vecteezy.com/system/resources/previews/042/573/884/original/ai-generated-tasty-indian-masala-chai-with-spices-isolated-on-transparent-background-png.png", name: " Masala Chai ", weight: 'Masala Chai Special with bliss', price: "₹59" },
+      { img: "https://png.pngtree.com/png-vector/20240226/ourmid/pngtree-green-tea-cup-with-mint-leaves-png-image_11876752.png", name: " Peppermint Tea ", weight: 'Tea that heal your inner soul', price: "₹89" },
+      { img: "https://5.imimg.com/data5/SELLER/Default/2023/10/356300700/JP/UA/SV/16612460/ginger-tulsi-tea.png", name: " Tulsi ginger tea ", weight: 'Fuel Your Day with a Perfect Tulsi', price: "₹89" },
+      { img: "https://img.freepik.com/premium-photo/honey-lemon-ginger-tea-isolated-white-background-generative-ai_936711-2823.jpg", name: "Lemon Ginger Honey tea", weight: 'Wake up honey', price: "₹89" },
+      { img: "https://static.vecteezy.com/system/resources/previews/029/169/199/original/a-cup-of-milk-tea-on-transparent-background-ai-generated-free-png.png", name: "Cow Milk Tea", weight: 'Tea Time, Perfected with Desi Touch', price: "₹59" },
+
+    
+    ],
+    Spageti: [
+ 
+    { img: "https://myblacktree.com/cdn/shop/files/peanut-noodles-6-removebg-preview.png?v=1691505194", name: "Spaghetti Chilli Garlic", weight: ' An Italian cuisine', price: "₹319" },
+    { img: "https://png.pngtree.com/png-vector/20240810/ourmid/pngtree-spaghetti-pasta-with-tomato-sauce-on-white-plate-png-image_13440767.png", name: "Spaghetti Marinara", weight: ' An Italian cuisine', price: "₹249" },
+    { img: "https://png.pngtree.com/png-vector/20240613/ourmid/pngtree-pasta-spaghetti-with-pesto-sauce-and-basil-leaf-close-up-png-image_12719666.png", name: "The Spaghetti Pesto", weight: ' An Italian cuisine', price: "₹369" },
+    { img: "https://png.pngtree.com/png-vector/20240613/ourmid/pngtree-pasta-spaghetti-with-pesto-sauce-and-basil-leaf-close-up-png-image_12719666.png", name: "The Spaghetti Pesto", weight: ' An Italian cuisine', price: "₹369" },
+    { img: "https://png.pngtree.com/png-clipart/20231211/ourmid/pngtree-cheese-veg-grilled-sandwich-png-image_11194578.png", name: "Veg Grilled Sandwich", weight: 'Frilled Sandwich', price: "₹129" },
+    { img: "https://tastythriftytimely.com/wp-content/uploads/2023/01/5-Minute-Creamy-Hummus-Featured.jpg", name: "Hummus", weight: 'Brown Bread, Carrot Sticks and Olives', price: "₹269" },
+    { img: "https://static.vecteezy.com/system/resources/previews/036/498/052/non_2x/ai-generated-creamy-chicken-alfredo-pasta-bow-on-transparent-background-free-png.png", name: " Creamy Pasta", weight: 'Creamy garlic Parmesan pasta dish.', price: "₹159" },
+    // { img: "", name: "", weight: '', price: "₹" },
+    { img: "https://tastythriftytimely.com/wp-content/uploads/2023/01/5-Minute-Creamy-Hummus-Featured.jpg", name: "Hummus", weight: 'Brown Bread, Carrot Sticks and Olives', price: "₹269" },
+    { img: "https://static.vecteezy.com/system/resources/previews/036/498/052/non_2x/ai-generated-creamy-chicken-alfredo-pasta-bow-on-transparent-background-free-png.png", name: " Creamy Pasta", weight: 'Creamy garlic Parmesan pasta dish.', price: "₹359" },
+    // { img: "", name: "", weight: '', price: "₹" },
+    // { img: "", name: "", weight: '', price: "₹" },
+    // { img: "", name: "", weight: '', price: "₹" },
+    // { img: "", name: "", weight: '', price: "₹" },
+    // { img: "", name: "", weight: '', price: "₹" },
+      
+    
+    
+    ],
+    Tea: [
+ 
+    { img: "https://cdn.intelligencebank.com/au/share/NOrD/1VN0z/eAXp0/preset=pB6BA/T125AE015_earl_grey_brewed_loose_leaf", name: " Early green tea ", weight: 'Wake Up to Smooth, Tea Bliss ', price: "₹99" },
+      { img: "https://atlas-content-cdn.pixelsquid.com/stock-images/milk-glass-Od917L2-600.jpg", name: "Steamed Cow Milk ", weight: 'Fresh Vegan Milk', price: "₹159" },
+      { img: "https://static.vecteezy.com/system/resources/previews/042/573/884/original/ai-generated-tasty-indian-masala-chai-with-spices-isolated-on-transparent-background-png.png", name: " Masala Chai ", weight: 'Masala Chai Special with bliss', price: "₹59" },
+      { img: "https://png.pngtree.com/png-vector/20240226/ourmid/pngtree-green-tea-cup-with-mint-leaves-png-image_11876752.png", name: " Peppermint Tea ", weight: 'Tea that heal your inner soul', price: "₹89" },
+      { img: "https://5.imimg.com/data5/SELLER/Default/2023/10/356300700/JP/UA/SV/16612460/ginger-tulsi-tea.png", name: " Tulsi ginger tea ", weight: 'Fuel Your Day with a Perfect Tulsi', price: "₹89" },
+      { img: "https://img.freepik.com/premium-photo/honey-lemon-ginger-tea-isolated-white-background-generative-ai_936711-2823.jpg", name: "Lemon Ginger Honey tea", weight: 'Wake up honey', price: "₹89" },
+      { img: "https://static.vecteezy.com/system/resources/previews/029/169/199/original/a-cup-of-milk-tea-on-transparent-background-ai-generated-free-png.png", name: "Cow Milk Tea", weight: 'Tea Time, Perfected with Desi Touch', price: "₹59" },
+
+    
+    ],
+
+ 
+  };
+
+  
+
+  const section = document.querySelector(".section");
+
+  function displayItems(category) {
+  section.innerHTML = ""; // Clear previous items
+  items[category].forEach(item => {
+      section.innerHTML += `
+          <div class="box">
+              <img src="${item.img}" alt="${item.name}" onclick="openProductDetails('${item.img}', '${item.name}', '${item.weight}', '${item.price.replace('₹', '')}')">
+              <h3>${item.name}</h3>
+              <h6>${item.weight}</h6>
+              <h5>${item.price}</h5>
+              <button class="add-button" data-name="${item.name}" data-price="${item.price.replace('₹', '')}" data-weight="${item.weight}">+</button>
+          </div>
+      `;
+  });
+
+  document.querySelectorAll('.add-button').forEach(button => {
+      button.addEventListener('click', function() {
+          const itemName = this.getAttribute('data-name');
+          const itemPrice = parseFloat(this.getAttribute('data-price'));
+          const itemWeight = this.getAttribute('data-weight');
+          const itemImg = this.parentNode.querySelector('img').getAttribute('src');
+          addItemToCart(itemName, itemPrice, itemImg, itemWeight);
+      });
+  });
+}
+
+
+function openProductDetails(img, name, weight, price) {
+  const url = `product-details.html?img=${encodeURIComponent(img)}&name=${encodeURIComponent(name)}&weight=${encodeURIComponent(weight)}&price=${encodeURIComponent(price)}`;
+  window.location.href = url;
+}
+
+
+// ---------------------------------------------------------------------------------------------GRAM PROBLEM SOLVED__________________________________________
+function addItemToCart(itemName, itemPrice, itemImg, itemWeight) {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const existingItem = cart.find(item => item.name === itemName);
+
+  if (existingItem) {
+      existingItem.count++;
+  } else {
+      cart.push({
+          name: itemName,
+          price: itemPrice,
+          img: itemImg,
+          weight: itemWeight, // Ensure itemWeight is a string or number
+          count: 1
+      });
+  }
+
+  localStorage.setItem('cart', JSON.stringify(cart));
+  document.dispatchEvent(new Event('cartUpdated'));
+}
+
+
+// ---------------------------------------------------------------------------------------------GRAM PROBLEM SOLVED__________________________________________
+function updateFooterCart() {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const cartCount = cart.reduce((count, item) => count + item.count, 0);
+  const totalPrice = cart.reduce((total, item) => total + (item.price * item.count), 0);
+
+  document.getElementById('cart-count').innerText = cartCount;
+  document.getElementById('total-price').innerText = `₹${totalPrice}`;
+}
+
+displayItems('Coffee');  // Initial display
+
+fetch('footer.html')
+  .then(response => response.text())
+  .then(data => {
+    document.body.insertAdjacentHTML('beforeend', data);
+    const script = document.createElement('script');
+    script.src = 'footer.js';
+    script.onload = () => {
+      updateFooterCart();
+      document.getElementById('view-cart').addEventListener('click', () => {
+        window.location.href = 'AddtoCart.html';
+      });
+      document.addEventListener('cartUpdated', updateFooterCart);
+    };
+    document.body.appendChild(script);
+  });
+  
+// ------------------------------------------------------------------------------Quick View Cart integration------------------------------------------------
+</script> 
+
+<div class="scrolling-wrapper">
+    <div class="card" onclick="displayItems('Coffee')"><img src="Image/cafes.webp"alt="Chowmin"class="menuhover"></div>
+    <div class="card" onclick="displayItems('Tea')"><img src="Image/Cafe/tea.png"alt="Momos"class="menuhover"></div>
+    <div class="card" onclick="displayItems('Pizza')"><img src= "Image/Cafe/pizza.webp"alt="Chicken chilli"class="menuhover"></div>
+    <div class="card" onclick="displayItems('Cake')"><img src="https://png.pngtree.com/png-clipart/20231114/original/pngtree-sweet-temptation-carrot-cake-slice-in-caramel-embrace-png-image_13541224.png"alt="Pannerchilli"class="menuhover"></div>
+    <div class="card" onclick="displayItems('Spageti')"><img src="https://png.pngtree.com/png-vector/20231001/ourmid/pngtree-spaghetti-bolognese-spaghetti-food-catering-fast-food-decorative-pattern-clip-art-png-image_10141556.png"alt="Pannerchilli"class="menuhover"></div>
+    <div class="card" onclick="displayItems('Drink')"><img src="https://thomsonline.in/wp-content/uploads/2019/08/pepsi-can-250ml.gif"alt="Chaat"class="menuhover"></div>
+
+ 
+    
+    <!-- <div class="card" onclick="displayItems('household')"><img src="Image/oil.webp" alt="Household"></div> -->
+</div>
+
+</body>
+</html>

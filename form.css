@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+body {
+    
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    font-family: "Lexend", sans-serif;
+}
+
+.menu{
+    border: 1px solid rgb(240, 238, 238);
+    height: 50px;
+    background: white;
+    /* margin-top: 42%; */
+    
+    
+}
+
+.banner2 {
+    padding: 20px;
+    text-align: center;
+    display: none;
+}
+
+.form-container {
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    font-size: 12px;
+    /* font-weight: 400; */
+  
+    font-family: "Lexend", sans-serif;
+    background: white;
+    box-shadow: 0 0 10px rgba(27, 148, 150, 0.1);
+    /* border-radius: 10px; */
+    animation: fadeIn 1s;
+    overflow: hidden;
+}
+
+h4{
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 15px;
+    text-align: left;
+}
+
+label {
+
+    display: block;
+
+    margin-bottom: 8px;
+    
+}
+
+input[type="text"], input[type="email"], input[type="tel"] {
+    width: 95%;
+    padding: 11px;
+    margin-bottom: 20px;
+    border: 2px solid #e6e4e4;
+    height: 45px;
+    font-size:13px;
+    border-radius:9px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background: green;
+    color: white;
+    /* margin-top: 8px; */
+    font-size: 16px;
+    cursor: pointer;
+    font-family: "Lexend", sans-serif;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+input[type="submit"]:hover {
+    background: #555;
+}
+
+/* Popup Message Styles */
+#popup-message {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    animation: slideIn 0.5s;
+}
+
+#popup-message h2 {
+    margin: 0 0 20px 0;
+    text-align: center;
+}
+
+#popup-message button {
+    display: block;
+    width: 100%;
+    background: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Order Summary Styles */
+#order-summary {
+    margin-bottom: 20px;
+    
+}
+
+.order-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    height: 20px;
+    background: #4caf50;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.5s;
+}
+
+.order-img {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .upheader {
+        flex-direction: column;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.bannertext{
+    font-size: 15px;
+   padding: 10px;
+    
+    padding-top: 25px;
+    font-weight: 600;
+    
+    font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+ 
+  font-style: normal;
+}
+
+.advertisement{
+    background-image: linear-gradient(green, white);
+    height: 23%;
+margin-top: -7px;
+border: none;
+    /* border: 1px solid white; */
+    width: 100%;
+
+}
+
+.advertisement img{
+    mix-blend-mode: multiply;
+    height: 90px;
+
+    float: right;
+    margin-top: 18%;
+
+    
+}
+.advertisement span{
+    font-weight: 800;
+    font-size: 35px;
+}
+h1{
+    font-size: 13px;
+    margin-bottom: 30px;
+}
+a{
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: auto;
+    margin-left: 10px;
+    font-style: normal;
+    font-weight: 200;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #b6fc8d;
+    border-radius: 5px;
+    background-color:  rgb(12, 148, 12);
+    padding: 0.525rem 1.5rem;
+    text-align: center;
+    color: rgba(255, 255, 255, 1);
+    outline: 0;
+    font-weight: 400;
+    font-size: 11px;
+    transition: all  .2s ease;
+    text-decoration: none;
+}
+    

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pcrepair.css">
+    <title>Your items</title>
+    <link rel="stylesheet" href="AddtoCart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+</head>
+<body>
+
+    <div class="cart-container">
+        
+        <h1>Delivery in minutes</h1>
+        <div id="cart-items"></div>
+    </div>
+
+    
+    
+       <!-- Footer container that will be shown/hidden -->
+       <div id="footer-container" style="display: none;">
+        <div class="delivery-description">
+            <h1 class="bill">Bill details</h1>
+            <h2 class="deliverysubtotal">🛒 Items total: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ₹<span id="total-price">0</span></h2>
+            <p class="deliverysubtotal1">🛵 Delivery charge: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ₹20</p>
+        </div>
+        <!-- <a href="index.html"><button id="continue-shopping">Continue Shopping</button></a> -->
+        <button id="place-order">Place Order &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Total :&nbsp;&nbsp;&nbsp; ₹<span id="total-price-summary">0</span></button>
+    </div>
+    
+    
+
+    <script>
+        function loadCart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItems = document.getElementById('cart-items');
+            const footerContainer = document.getElementById('footer-container');
+            cartItems.innerHTML = '';
+
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p>Your cart is empty.</p>';
+                footerContainer.style.display = 'none';
+                updateTotalPrice();
+                return;
+            }
+
+            cart.forEach((item, index) => {
+                const itemDiv = document.createElement('div');
+                itemDiv.classList.add('cart-item');
+                itemDiv.innerHTML = `
+                  <a href="product-details.html?name=${encodeURIComponent(item.name)}&price=${encodeURIComponent(item.price)}&weight=${encodeURIComponent(item.weight)}&img=${encodeURIComponent(item.img)}">
+                    <img src="${item.img}" class="cart-img" alt="${item.name}">
+                    <div class="cart-details">
+                        <h2>${item.name}</h2>
+                        <p>Quantity: ${item.count} (${item.weight} ${item.unit})</p>
+                        <div class="cart-controls">
+                            <button class="decrement-button" data-index="${index}">-</button>
+                            <span class="item-count">${item.count}</span>
+                            <button class="increment-button" data-index="${index}">+</button>
+                            <span class="item-price">&#8377;${(item.price * item.count).toFixed(2)}</span>
+                        </div>
+                    </div>
+                `;
+                cartItems.appendChild(itemDiv);
+            });
+            
+
+            document.querySelectorAll('.remove-button').forEach(button => {
+                button.addEventListener('click', function() {
+                    const index = this.getAttribute('data-index');
+                    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                    cart.splice(index, 1);
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    loadCart();
+                    updateTotalPrice();
+                    document.dispatchEvent(new CustomEvent('cartUpdated'));
+                });
+            });
+            document.querySelectorAll('.increment-button').forEach(button => {
+    button.addEventListener('click', function(event) {
+        event.stopPropagation(); // Prevents the link from being triggered
+        event.preventDefault(); // Prevents the default action of the anchor tag
+        const index = this.getAttribute('data-index');
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart[index].count += 1;
+        localStorage.setItem('cart', JSON.stringify(cart));
+        loadCart();
+        updateTotalPrice();
+        document.dispatchEvent(new CustomEvent('cartUpdated'));
+    });
+});
+
+document.querySelectorAll('.decrement-button').forEach(button => {
+    button.addEventListener('click', function(event) {
+        event.stopPropagation(); // Prevents the link from being triggered
+        event.preventDefault(); // Prevents the default action of the anchor tag
+        const index = this.getAttribute('data-index');
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        if (cart[index].count > 1) {
+            cart[index].count -= 1;
+        } else {
+            cart.splice(index, 1);
+        }
+        localStorage.setItem('cart', JSON.stringify(cart));
+        loadCart();
+        updateTotalPrice();
+        document.dispatchEvent(new CustomEvent('cartUpdated'));
+    });
+});
+
+
+            // Show the footer when the cart has items
+            if (cart.length > 0) {
+                footerContainer.style.display = 'block';
+            }
+
+            updateTotalPrice();
+        }
+        function updateTotalPrice() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const deliveryFee = 20; // Fixed delivery fee
+        
+            const itemTotal = cart.reduce((total, item) => total + (item.price * item.count), 0); // Multiply price by quantity
+        
+            document.getElementById('total-price').innerText = itemTotal; // Display item total
+            document.getElementById('total-price-summary').innerText = itemTotal + deliveryFee; // Display final total with delivery fee
+        
+            localStorage.setItem('totalPrice', itemTotal + deliveryFee);
+        }
+        
+        
+
+
+// Load the cart when the document is ready
+document.addEventListener('DOMContentLoaded', () => {
+    loadCart();
+
+    // document.getElementById('continue-shopping').addEventListener('click', () => {
+    //     window.location.href = 'pcrepair.html';
+    // });
+
+    document.getElementById('place-order').addEventListener('click', () => {
+        window.location.href = 'form.html';
+    });
+});
+
+
+    </script>
+
+</body>
+</html>

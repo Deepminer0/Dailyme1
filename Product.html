@@ -1,0 +1,282 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="product.css">
+      <link rel="icon" type="image/x-icon" href="/Image/logooo.png">
+      <title>Grocery | Delivery in minutes</title>
+      <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TBT7HR0C4N">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TBT7HR0C4N');
+</script>
+  </head>
+  <body>
+    <!-- <h1>Delivery in <span>minutes</span></h1> -->
+       
+
+<div class="storebanner">
+    <!-- <img src="Image/greengp.png" alt=""> -->
+    <!-- <h1 class="storename">Grocery Store</h1>
+    <h1 class="storedescription">Get Grocery delivery in <span>minutes</span></h1> -->
+</div>
+
+  <div class="section"></div>
+
+  <script>
+    const items = {
+      vegetables: [
+        { img: "Image/tomatos.png", name: "Tomato", weight: '1kg', price: "₹60" },
+        { img: "https://m.media-amazon.com/images/I/313dtY-LOEL.jpg", name: "Potato white", weight: "1kg", price: "₹30" },
+        { img: "Image/carrot.png", name: "Carrot", weight: "1kg", price: "₹60" },
+        { img: "Image/brinjle.png", name: "Gol Brinjle", weight: "1kg", price: "₹70" },
+        { img: "Image/spinach.png", name: "Palak", weight: "1kg", price: "₹80" },
+        { img: "Image/patal.webp", name: "Patal", weight: "1kg", price: "₹60" },
+        { img: "Image/onions.jpg", name: "Onion", weight: "1kg", price: "₹60" },
+        { img: "Image/chili.jpg", name: "Green Mirch", weight: "100g", price: "₹10" },
+        { img: "Image/shimla.jpeg", name: "Shimla Mirch", weight: "250g", price: "₹30" },
+        { img: "Image/nimbu.jpg", name: "Nimbu", weight: "3pc", price: "₹10" },
+        { img: "Image/adrak.png", name: "Adrak", weight: "100g", price: "₹20" },
+        { img: "Image/kaddu.jpg", name: "Lauki", weight: "1kg", price: "₹30" },
+        { img: "Image/karela.jpg", name: "Karela", weight: "1kg", price: "₹50" },
+        { img: "Image/cuc.webp", name: "Cucumber", weight: "1kg", price: "₹35" },
+        { img: "Image/caba.jpeg", name: "Cabbage", weight: "1kg", price: "₹40" },
+        { img: "Image/cauli.png", name: "Cauli Flower", weight: "1 Piece", price: "₹60" },
+        { img: "https://www.reliablebasket.in/uploads/product_image/1608855553.jpeg", name: "Mushrooms", weight: "1 packet", price: "₹60" },
+        { img: "https://static.wixstatic.com/media/4238e8_98381469a71e4d558ff8f3f32c768327~mv2.jpg/v1/fill/w_480,h_480,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/4238e8_98381469a71e4d558ff8f3f32c768327~mv2.jpg", name: "Long Brinjle", weight: "1kg", price: "₹50" },
+        { img: "https://sabziwala.co.in/shoponline/image/cache/data/Vegetables/228x228/Tori228x228-228x228.jpg", name: "Tori ", weight: "1kg", price: "₹60" },
+        { img: "https://mag03.dsmonline.pk/media/catalog/product/cache/e626209f6586797a49e0d0a395e17e33/l/e/lehsan_desi_garlic_desi_.jpg", name: "Desi Lassun", weight: "250g", price: "₹75" },
+        { img: "https://rukminim2.flixcart.com/image/850/1000/kll7bm80/plant-seed/4/t/k/50-a604-aa-50-lyrs-original-imagyztyjuzfpzzd.jpeg?q=90&crop=false", name: "Dhaniya", weight: "100g", price: "₹30" },
+        // { img: "", name: "", weight: "1kg", price: "₹" },
+
+
+      ],
+      fruits: [
+        { img: "Image/apple.png", name: "Apple", weight: "1kg", price: "₹150" },
+        { img: "Image/banana.jpeg", name: "Banana", weight: "1kg", price: "₹40" },
+        // { img: "Image/grapes.webp", name: "Grapes", weight: "500g", price: "₹70" },
+        // { img: "Image/mango.png", name: "Mango", weight: "1kg", price: "₹80" },
+        { img: "Image/anar.png", name: "Pomegranate", weight: "1kg", price: "₹120" },
+        { img: "Image/papaya.webp", name: "Papaya", weight: "1kg", price: "₹150" },
+        // { img: "Image/watermelon.png", name: "Watermelon", weight: "1kg", price: "₹40" },
+        { img: "https://www.microgreens.co.in/wp-content/uploads/2020/11/Kiwi-green.png", name: "Kiwi", weight: "500g", price: "₹70" },
+        { img: "https://i5.walmartimages.com/seo/Fresh-Coconut-Each-1-Count_81131765-9311-47ed-ae77-15dddde6b01d.7363231977ed5579d57e0b24cd7c1d9f.png?odnHeight=768&odnWidth=768&odnBg=FFFFFF", name: "Coconut", weight: "1kg", price: "₹80" },
+        // { img: "Image/litchi.webp", name: "litchi", weight: "1kg", price: "₹120" },
+        { img: "Image/Pineapple.png", name: "Pineapple", weight: "1kg", price: "₹120" },
+        { img: "Image/Strawberry.png", name: "Strawberry", weight: "1kg", price: "₹120" },
+      ],
+      Oil: [
+      { img: "Image/oil.png", name: "Fortune Mustard Oil", weight: "1 Litre", price: "₹165" },
+       { img: "Image/oil.png", name: "Fortune Mustard Oil", weight: "500ml", price: "₹75" },
+       { img: "Image/fortune.jpg", name: "Fortune Refined Oil Bottle", weight: "1 Litre", price: "₹129" },
+        { img: "Image/spyahealth.jpg", name: " Fortune Soyabean Oil ", weight: "Pouch 1 Litre", price: "₹133" },
+        // { img: "Image/soyahealth5.webp", name: "Soya Health", weight: "1L", price: "₹60" },
+        { img: "Image/kachi.webp", name: "Fortune Premium Kachi Ghani Oil", weight: "Pouch 1 Litre", price: "₹140" },
+        { img: "Image/safolayellow1.webp", name: "Saffola Active Refined Oil P", weight: "Pouch 1 Litre", price: "₹135" },
+        { img: "Image/safolayellow.webp", name: "Saffola Gold Refined Oil", weight: "Pouch 1L", price: "₹145" },
+         { img: "https://www.jiomart.com//images/product/240x240/490012733/dhara-kachi-ghani-mustard-oil-1-l-pouch-product-images-o490012733-p490012733-0-202208221752.jpg", name: "Dhara Kachhi Ghani Mustard Oil ", weight: "Pouch 1 Litre", price: "₹140" }
+      ],
+      rice: [
+        { img: "Image/ashiwadata.webp", name: "Aashirvaad Atta/Godihittu ", weight: "5kg", price: "₹245" },
+        { img: "Image/taazagreen.webp", name: "Brooke Bond Taaza Tea Pouch", weight: "250g ", price: "₹50" },
+        { img: "Image/salt.png", name: "Tata Namak ", weight: "1kg", price: "₹24" },
+        { img: "Image/taj.png", name: "Taj Mahal Tea, 500 g", weight: "", price: "₹300" },
+        { img: "Image/tatatea.webp", name: "Tata Tea Premium Desh Ki Chai", weight: "500g", price: "₹220" },
+        
+        { img: "Image/mung.webp", name: "Fresh Mung Dal", weight: "1kg", price: "₹90" },
+        { img: "Image/masoor.webp", name: "Masur Dal", weight: "100g", price: "₹90" },
+        { img: "Image/haldis.png", name: "Khula haldi Powder", weight: "250g", price: "₹60" },
+        { img: "Image/rahad.webp", name: "Rahad daal ", weight: "1kg", price: "₹90" },
+        { img: "Image/chini.webp", name: "Chini", weight: "1k", price: "50" },
+        { img: "Image/haldi.png", name: "Haldi Powder Packet", weight: "200g", price: "₹45" },
+        { img: "Image/ghee.png", name: "Patanjali Ghee", weight: "500ml", price: "₹380" }
+      ],
+      Milkproduct: [
+        { img: "Image/bournvita.webp", name: "Bournvita Nutrition Drink", weight: "1kg", price: "₹410" },
+       
+         { img: "Image/soats.webp", name: "Saffola Oats", weight: " 500 g Pouch", price: "90" },
+        { img: "Image/horlicsjunior.webp", name: "Junior Horlicks 1kg", weight: "", price: "₹445" },
+        { img: "Image/horlicschoco.webp", name: "Horlicks Nutrition Drink - Chocolate, 1 kg Pouch", weight: "", price: "380" },
+      
+        { img: "Image/cerelac.avif", name: "Nestle Cerelac Baby Cereal ", weight: " 12 To 24 330g", price: "₹500" },
+      
+        { img: "Image/cred.webp", name: "Nestle Cerelac Baby Cereal,6 To 24 Mon", weight: "300g", price: "₹280" },
+   
+        { img: "Image/redoats.avif", name: "Kellogg's Oats - Low In Sodium, Soluble Fibre,", weight: "400g", price: "₹85" },
+       
+ 
+        { img: "Image/blueoats.avif", name: "Quaker Rolled Oats, 400 g Pouch", weight: "", price: "₹80" },
+       
+        { img: "Image/cbanana.png", name: "Nestle Cerelac Baby Cereal, 6 to 12 Mon", weight: "300g", price: "280" },
+       
+      ],
+      Snacks: [
+        { img: "Image/redbingo.webp", name: " Bingo! Potato Chips - Tomato Flavour, 52 g", weight: "", price: "₹20" },
+        { img: "Image/lays.avif", name: "Lay's American Style Onion Chips", weight: "73g", price: "₹30" },
+        { img: "https://m.media-amazon.com/images/I/71axGdrNHoL.jpg", name: "LAY'S® Classic Potato Chips", weight: "130g", price: "₹50" },
+        { img: "https://www.bigbasket.com/media/uploads/p/xl/312169_15-britannia-bake-rusk-toast.jpg", name: "Rusk Biscuit 150g", weight: "", price: "₹35" },
+       
+        { img: "Image/laysgreen.avif", name: "Lays Chile Limon 50gm  ", weight: "", price: "₹20" },
+        { img: "Image/waiwaiveg.png", name: "Veg WaiWai ", weight: "100g", price: "₹20" },
+        { img: "Image/bingo.webp", name: "Bingo Original Style  Potato Chips", weight: "100g", price: "₹20" },
+        { img: "https://m.media-amazon.com/images/I/71Af8qfZQUL.jpg", name: "Lay's Spanish Tomato Tango Potato Chips 52 g", weight: "", price: "₹20" },
+        { img: "Image/popcorn.webp", name: "Act too Popcorn", weight: "100g", price: "₹20" },
+        { img: "Image/doritos.png", name: "Doritos Nacho Chips", weight: "100g", price: "₹50" },
+        { img: "Image/Maggie.png", name: "Maggie", weight: "100g", price: "₹20" },
+
+        { img: "Image/bbingo.webp", name: "Bingo Potato Chips Masala, 52 g", weight: "", price: "₹20" },
+        { img: "Image/mixture.webp", name: "Bicano Chatpata Mixture", weight: "500g", price: "₹70" },
+        { img: "Image/pasta.avif", name: "Pasta", weight: "500g", price: "₹70" },
+        
+        { img: "Image/haldiram.webp", name: "Haldiram masala mixture", weight: "200g", price: "₹45" },
+
+      ],
+      Cleaning: [
+        { img: "Image/tides.webp", name: "Tide Double Power Detergent Washing Powder", weight: "1kg", price: "₹110" },
+        { img: "Image/tide2.png", name: "Tide Matic Top Load Liquid Detergent", weight: "850ml", price: "₹170" },
+        { img: "Image/wheel.webp", name: "Active Wheel Blue Lemon & Jasmine", weight: "1kg", price: "₹36" },
+        { img: "Image/rin.webp", name: "Rin Refresh Detergent Powder", weight: "500g", price: "₹56" },
+        { img: "Image/sabunrin.webp", name: "Rin Detergent Soap", weight: "110g", price: "₹10" },
+        { img: "Image/Harpic.webp", name: "Blue Harpic", weight: "200ml", price: "₹40" },
+        { img: "Image/redharpic.png", name: "Red Harpic", weight: "200ml", price: "₹50" },
+        { img: "Image/brsh.webp", name: "Toilet Brush", weight: "1 piece", price: "₹70" },
+        { img: "Image/vimbar.webp", name: "Vimbar Soap", weight: "130g", price: "₹10" },
+        { img: "Image/vimliquid.webp", name: "Vim Liquid", weight: "500ml", price: "₹125" },
+        { img: "Image/scrubber.png", name: "Vim scrubber", weight: "", price: "₹20" },
+        { img: "Image/scrubbers.webp", name: "Steel Scubber", weight: "", price: "₹20" },
+        { img: "Image/comforty.webp", name: "Comfort ", weight: "500g", price: "₹50" },
+        { img: "Image/dettol3.avif", name: "Pink Dettol Skincare Liquid Handwash 200 ml", weight: "200ml", price: "₹76" },
+        { img: "Image/dettol2.avif", name: "Dettol Original Liquid Handwash 250 ml", weight: "250ml", price: "₹139" },
+        { img: "Image/dettol1.webp", name: "Dettol Antiseptic Liquid, 550 ml", weight: "", price: "₹155" },
+       
+
+      ],
+      Milk: [
+        { img: "Image/Amul.avif", name: "Amul dudh", weight: "500g", price: "₹30" },
+        { img: "Image/Amul.avif", name: "Amul dudh", weight: "1kg", price: "₹30" },
+       
+        { img: "Image/sudha.png", name: "Sudha milk", weight: "1kg", price: "₹30" },
+        { img: "Image/sudha.png", name: "Sudha milk", weight: "500g", price: "₹30" },
+        { img: "Image/dahi.webp", name: "Dahi", weight: "", price: "₹30" },
+        { img: "Image/chach.png", name: "Chach", weight: "", price: "₹10" },
+        { img: "Image/butter.png", name: "Amul Butter", weight: "100g", price: "₹58" },
+        { img: "Image/lassi.png", name: "Lassi", weight: "250g", price: "₹30" },
+       
+        { img: "Image/Amulkool.png", name: "Amul Kool", weight: "180ml", price: "₹30" },
+        { img: "Image/badamshaker.avif", name: "Amul Badam Shake", weight: "200ml", price: "₹40" },
+        
+
+        { img: "Image/paneer.png", name: "Sudha Paneer", weight: "200g", price: "₹85" },
+        
+        { img: "Image/nestle.webp", name: "Milkmaid", weight: "380g", price: "₹150" },
+        { img: "Image/honey.webp", name: "Dabur Honey", weight: "100g", price: "₹68" },
+       
+        { img: "Image/honeyp.png", name: "Patanjali Pure Natural Honey 500 g", weight: "", price: "₹210" },
+    ]
+    };
+
+    
+
+    const section = document.querySelector(".section");
+
+function displayItems(category) {
+section.innerHTML = ""; // Clear previous items
+items[category].forEach(item => {
+    section.innerHTML += `
+        <div class="box">
+            <img src="${item.img}" alt="${item.name}" onclick="openProductDetails('${item.img}', '${item.name}', '${item.weight}', '${item.price.replace('₹', '')}')">
+            <h3>${item.name}</h3>
+            <h6>${item.weight}</h6>
+            <h5>${item.price}</h5>
+            <button class="add-button" data-name="${item.name}" data-price="${item.price.replace('₹', '')}" data-weight="${item.weight}">ADD</button>
+        </div>
+    `;
+});
+
+document.querySelectorAll('.add-button').forEach(button => {
+    button.addEventListener('click', function() {
+        const itemName = this.getAttribute('data-name');
+        const itemPrice = parseFloat(this.getAttribute('data-price'));
+        const itemWeight = this.getAttribute('data-weight');
+        const itemImg = this.parentNode.querySelector('img').getAttribute('src');
+        addItemToCart(itemName, itemPrice, itemImg, itemWeight);
+    });
+});
+}
+
+
+function openProductDetails(img, name, weight, price) {
+const url = `product-details.html?img=${encodeURIComponent(img)}&name=${encodeURIComponent(name)}&weight=${encodeURIComponent(weight)}&price=${encodeURIComponent(price)}`;
+window.location.href = url;
+}
+
+
+// ---------------------------------------------------------------------------------------------GRAM PROBLEM SOLVED__________________________________________
+function addItemToCart(itemName, itemPrice, itemImg, itemWeight) {
+const cart = JSON.parse(localStorage.getItem('cart')) || [];
+const existingItem = cart.find(item => item.name === itemName);
+
+if (existingItem) {
+    existingItem.count++;
+} else {
+    cart.push({
+        name: itemName,
+        price: itemPrice,
+        img: itemImg,
+        weight: itemWeight, // Ensure itemWeight is a string or number
+        count: 1
+    });
+}
+
+localStorage.setItem('cart', JSON.stringify(cart));
+document.dispatchEvent(new Event('cartUpdated'));
+}
+
+
+// ---------------------------------------------------------------------------------------------GRAM PROBLEM SOLVED__________________________________________
+function updateFooterCart() {
+const cart = JSON.parse(localStorage.getItem('cart')) || [];
+const cartCount = cart.reduce((count, item) => count + item.count, 0);
+const totalPrice = cart.reduce((total, item) => total + (item.price * item.count), 0);
+
+document.getElementById('cart-count').innerText = cartCount;
+document.getElementById('total-price').innerText = `₹${totalPrice}`;
+}
+
+displayItems('vegetables');  // Initial display
+
+fetch('footer.html')
+.then(response => response.text())
+.then(data => {
+  document.body.insertAdjacentHTML('beforeend', data);
+  const script = document.createElement('script');
+  script.src = 'footer.js';
+  script.onload = () => {
+    updateFooterCart();
+    document.getElementById('view-cart').addEventListener('click', () => {
+      window.location.href = 'AddtoCart.html';
+    });
+    document.addEventListener('cartUpdated', updateFooterCart);
+  };
+  document.body.appendChild(script);
+});
+// ------------------------------------------------------------------------------Quick View Cart integration------------------------------------------------
+</script>  <div class="scrolling-wrapper">
+      <div class="card" onclick="displayItems('vegetables')"><img src="Image/spinach.png" alt="Vegetables"class="menuhover"></div>
+      <div class="card" onclick="displayItems('fruits')"><img src="Image/Strawberry.png" alt="Fruits"class="menuhover"></div>
+      <div class="card" onclick="displayItems('Oil')"><img src="Image/oil.png" alt="Oil"class="menuhover"></div>
+      <div class="card" onclick="displayItems('Milkproduct')"><img src="Image/horlics.avif" alt="Milk Products"class="menuhover"></div>
+      <div class="card" onclick="displayItems('rice')"><img src="Image/ashirwad.jpeg" alt="Ata "class="menuhover"></div>
+      <div class="card" onclick="displayItems('Cleaning')"><img src="Image/tidepicture.webp" alt="Cleaning Essentials" class="menuhover"></div>
+      <div class="card" onclick="displayItems('Snacks')"><img src="Image/lays.avif" alt="Snack"class="menuhover"></div>
+      <div class="card" onclick="displayItems('Milk')"><img src="Image/amuls.avif" alt="Milk"class="menuhover"></div>
+      <!-- <div class="card" onclick="displayItems('household')"><img src="Image/oil.webp" alt="Household"></div> -->
+  </div>
+</body>
+  </html>

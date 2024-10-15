@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pcrepair.css">
+    <title>Service Form</title>
+    <link rel="stylesheet" href="form.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+    <div class="advertisement">
+        <img src="Image/koreanboy.png" alt="" srcset="">
+        <h1 class="bannertext">Get your order delivered in <span>minutes</span></h1>
+        <a href="Product.html">Buy in Store</a>
+    </div>
+   
+    <div class="banner2">
+        <div id="order-summary"></div>
+    </div>
+
+    <div class="form-container">
+        <h1>Enter complete address</h1>
+        <form id="service-form" name="google-sheet">
+            <label for="name">Receiver Name</label>
+            <input type="text" id="name" name="Name" required placeholder="Receiver Name"><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="Email" required placeholder="abc@gmail.com"><br>
+            <label for="phone">Mobile Number</label>
+            <input type="tel" id="phone" name="Mobile" required placeholder="+91XXXXXXXX"><br>            
+            <label for="address">Street, Society, Landmark</label>
+            <input type="text" id="address" name="Address" required placeholder="Enter complete address"><br>
+            <label for="pincode">Pin Code:</label>
+            <input type="text" id="pincode" name="Pincode" required placeholder="824231"><br>
+            <input type="submit" name="submit" value="Place Order">
+        </form>
+    </div>
+
+    <div id="popup-message" style="display:none;">
+        <h2>Order Placed Successfully!</h2>
+        <button onclick="closePopup()">Close</button>
+        <button id="download-invoice">Download Bill</button>
+    </div>
+
+    <script>
+        function showPopup() {
+            document.getElementById('popup-message').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('popup-message').style.display = 'none';
+        }
+        function loadOrderSummary() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const orderSummary = document.getElementById('order-summary');
+        
+            if (cart.length === 0) {
+                orderSummary.innerHTML = '<p>No services selected.</p>';
+                return;
+            }
+        
+            cart.forEach(item => {
+                const serviceDiv = document.createElement('div');
+                serviceDiv.classList.add('order-item');
+                serviceDiv.innerHTML = `
+                    <img src="${item.img}" class="order-img" alt="${item.name}">
+                    <h2>${item.name}</h2>
+                    <p>Weight: ${item.weight}</p>
+                    <p>Price: ₹${item.price}</p>
+                `;
+                orderSummary.appendChild(serviceDiv);
+            });
+        
+            // Instead of recalculating, use the totalPrice from localStorage
+            const totalPrice = localStorage.getItem('totalPrice') || 0;
+        
+            const totalPriceDiv = document.createElement('div');
+            totalPriceDiv.classList.add('total-price');
+            totalPriceDiv.innerHTML = `<h2>Total Price: ₹${totalPrice}</h2>`;
+            orderSummary.appendChild(totalPriceDiv);
+        
+            localStorage.setItem('totalPrice', totalPrice); // Ensure total price is stored
+        }
+        
+
+        function generateInvoice(formData, cart) {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+        
+            doc.text("Invoice", 20, 20);
+            doc.text(`Name: ${formData.get('Name')}`, 20, 30);
+            doc.text(`Email: ${formData.get('Email')}`, 20, 40);
+            doc.text(`Phone: ${formData.get('Mobile')}`, 20, 50);
+            doc.text(`Address: ${formData.get('Address')}`, 20, 60);
+            doc.text(`Pin Code: ${formData.get('Pincode')}`, 20, 70);
+        
+            let yOffset = 80;
+            cart.forEach((item, index) => {
+                const weight = item.weight || ''; // Fallback if weight is undefined
+    const unit = item.unit || ''; // Fallback if unit is undefined
+
+    doc.text(`Service ${index + 1}: ${item.name}`, 20, yOffset);
+    doc.text(`Weight: ${weight}${unit}`, 20, yOffset + 10); // Ensure proper weight and unit
+    doc.text(`Price: ₹${item.price} x ${item.count} = ₹${(item.price * item.count).toFixed(2)}`, 20, yOffset + 20);
+    yOffset += 30;
+            });
+        
+            const totalPrice = cart.reduce((total, item) => total + (item.price * item.count), 0); // Calculate total price based on quantity
+            doc.text(`Total Price: ₹${totalPrice.toFixed(2)}`, 20, yOffset + 10);
+        
+            doc.save('Download Bill');
+        }
+        
+           document.addEventListener('DOMContentLoaded', () => {
+            loadOrderSummary();
+
+            const totalPrice = localStorage.getItem('totalPrice');
+            if (totalPrice) {
+                const orderSummary = document.getElementById('order-summary');
+                const totalPriceDiv = document.createElement('div');
+                totalPriceDiv.classList.add('total-price');
+                totalPriceDiv.innerHTML = `<h2>Total Price: ₹${Number(totalPrice).toFixed(2)}</h2>`;
+                orderSummary.appendChild(totalPriceDiv);
+            }
+
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbwy8xaZDciZIBhFF33Y-YiwhxWloH5t_tFuxrei1SlaJqCJt0EedVlHYSKqvc0hslq-/exec';
+            const form = document.forms['google-sheet'];
+
+            form.addEventListener('submit', e => {
+                e.preventDefault();
+            
+                const formData = new FormData(form);
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                
+                const services = [];
+                cart.forEach(item => {
+                    services.push(`${item.name} (${item.weight} ${item.unit}) x ${item.count}`); // Include quantity and unit in the summary
+                });
+            
+                // Append the concatenated services string to the form data
+                formData.append('Services', services);
+            
+                // Calculate and append the total price with delivery charge
+                const totalPrice = localStorage.getItem('totalPrice') || 0;
+                formData.append('TotalPrice', totalPrice);
+
+                
+                fetch(scriptURL, { method: 'POST', body: formData })
+                  .then(response => {
+                    if (response.ok) {
+                      alert("Cash On Delivery Order Success");
+                      localStorage.removeItem('cart');
+                      showPopup();
+                    } else {
+                      throw new Error('Network response was not ok.');
+                    }
+                  })
+                  .catch(error => {
+                    console.error('Error!', error.message);
+                    alert('There was a problem with the submission. Please try again.');
+                  });
+            
+                document.getElementById('download-invoice').addEventListener('click', () => {
+                  generateInvoice(formData, cart);
+                });
+            });
+            
+        });
+    </script>
+</body>
+</html>

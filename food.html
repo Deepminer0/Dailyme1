@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="food.css">
+    <link rel="icon" type="image/x-icon" href="/Image/logooo.png">
+    <title>Yummy food | Delivery in minutes</title>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TBT7HR0C4N">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TBT7HR0C4N');
+</script>
+</head>
+<body>
+  <div class="storebanner">
+    <!-- <img src="Image/food/momobanner.webp" alt=""> -->
+    <h1 class="storename">Fast Food store</h1>
+    <h1 class="storedescription">Get Chowmin momo roll & more in <span>minutes</span></h1>
+</div>
+
+<div class="section"></div>
+
+<script>
+  
+  const items = {
+    Chowmin: [
+      { img: "https://xpress.amrapalibanquet.com/wp-content/uploads/2020/09/veg-choumein.png", name: " Veg Chowmin Full ", weight: 'Market', price: "₹60" },
+      { img: "Image/food/pasta.png", name: " Egg Chowmin Full", weight: 'Fujiya Green Restaurant', price: "₹120" },
+      { img: "https://xpress.amrapalibanquet.com/wp-content/uploads/2020/09/veg-choumein.png", name: " Veg Chowmin Half ", weight: 'Market', price: "₹30" },
+      { img: "Image/food/chcikenchowmin.png", name: "Chicken Chowmin", weight: 'Market', price: "₹50" },
+      { img: "Image/food/eggch.png", name: " Egg Chowmin Full", weight: 'Fujiya Green Restaurant', price: "₹120" },
+      { img: "Image/food/chcikenchowmin.png", name: "Chicken Chowmin", weight: 'Market', price: "₹100" },
+      { img: "Image/food/chcikenchowmin.png", name: "Chicken Chowmin Full", weight: 'Fujiya Green Restaurant', price: "₹100" },
+      { img: "Image/food/eggs.webp", name: "Egg Chowmin Full ", weight: 'Market', price: "₹80" },
+      { img: "Image/food/fujiyachowminAC.png", name: "Veg Chowmin Full ", weight: 'Fujiya Green Restaurant', price: "₹120" },
+    ],
+    Momo: [
+    { img: "Image/food/momos.png", name: " Veg Momos Full plate", weight: 'Market', price: "₹60" },
+    { img: "Image/food/momome.webp", name: " Veg Momoms Full plate", weight: 'Fujiya Green Restaurant', price: "₹60" },
+    { img: "Image/food/momoms.webp", name: " Veg Momoms Full plate", weight: 'Fujiya Green Restaurant', price: "₹60" },
+    { img: "Image/food/firedmomo.png", name: " Friend Veg Momoms Full", weight: 'Market', price: "₹60" },
+    { img: "Image/food/chmomo.webp", name: " Friedn Chicken Momoms Full", weight: 'Fujiya Green Restaurant', price: "₹60" },
+  ],
+
+    Chickenchilli: [
+   
+    { img: "Image/food/chicken.png", name: "Chickin Chilli Full", weight: 'Fujiya Green Restaurant', price: "₹150" },
+    { img: "Image/food/chickenchillis.png", name: "Chickin Chilli Full", weight: 'Market', price: "₹100" },
+    { img: "Image/food/curry.png", name: "Chicken curry Full", weight: 'Fujiya Green Restaurant', price: "₹150" },
+    { img: "Image/food/curry.png", name: "Chicken curry Half", weight: 'Fujiya Green Restaurant', price: "₹90" },
+    { img: "Image/food/chickenchillis.png", name: "Chickin Chilli Half", weight: 'Market', price: "₹50" },
+    { img: "Image/food/chickenleg.jpeg", name: "Fry Chicken Full", weight: 'Fujiya Green Restaurant', price: "₹150" },
+  
+
+    
+    ],
+    Panner: [
+      { img: "Image/food/panners.png", name: "Paneer Chill Fulli", weight: 'Tofu Restaurant', price: "₹180" },
+      { img: "Image/food/panner.png", name: "Panner Chilli Full", weight: 'Fujiya Green Restaurant', price: "₹150" },
+      { img: "Image/food/panners.png", name: "Panner Chilli Half", weight: 'Tofu Restaurant', price: "₹90" },
+      { img: "Image/food/panner1.png", name: "Panner Chilli Half", weight: 'Market', price: "₹150" },
+      { img: "Image/food/panner.png", name: "Panner Chilli Full", weight: 'Fujiya Green Restaurant', price: "₹90" },
+      { img: "Image/food/panner1.png", name: "Paneer Chilli Full", weight: 'Market', price: "₹80" },
+ 
+
+     
+    ],
+    Chaat: [
+      
+    { img: "Image/food/chaata.png", name: "Special Chaat", weight: 'Market', price: "₹50" },
+    { img: "Image/food/chaata.png", name: "Spicy Chaat", weight: 'Magadh tasty sweets', price: "₹50" },
+    { img: "Image/food/samosa.png", name: "Hot Crunchy Samosha 2pc", weight: 'Prachi Sweets', price: "₹20" },
+    { img: "Image/food/samosa.png", name: "Hot  Samosha 2pc", weight: 'Market', price: "₹20" },
+    { img: "Image/food/dahibada.png", name: "Dahi Vada", weight: 'Market', price: "₹20" },
+    { img: "Image/food/masaldosa.png", name: "Masala Dosa", weight: 'RamSevak', price: "₹60" },
+    
+    ],
+
+ 
+  };
+
+  
+
+  const section = document.querySelector(".section");
+
+  function displayItems(category) {
+  section.innerHTML = ""; // Clear previous items
+  items[category].forEach(item => {
+      section.innerHTML += `
+          <div class="box">
+              <img src="${item.img}" alt="${item.name}" onclick="openProductDetails('${item.img}', '${item.name}', '${item.weight}', '${item.price.replace('₹', '')}')">
+              <h3>${item.name}</h3>
+              <h6>${item.weight}</h6>
+              <h5>${item.price}</h5>
+              <button class="add-button" data-name="${item.name}" data-price="${item.price.replace('₹', '')}" data-weight="${item.weight}">ADD</button>
+          </div>
+      `;
+  });
+
+  document.querySelectorAll('.add-button').forEach(button => {
+      button.addEventListener('click', function() {
+          const itemName = this.getAttribute('data-name');
+          const itemPrice = parseFloat(this.getAttribute('data-price'));
+          const itemWeight = this.getAttribute('data-weight');
+          const itemImg = this.parentNode.querySelector('img').getAttribute('src');
+          addItemToCart(itemName, itemPrice, itemImg, itemWeight);
+      });
+  });
+}
+
+
+function openProductDetails(img, name, weight, price) {
+  const url = `product-details.html?img=${encodeURIComponent(img)}&name=${encodeURIComponent(name)}&weight=${encodeURIComponent(weight)}&price=${encodeURIComponent(price)}`;
+  window.location.href = url;
+}
+
+
+// ---------------------------------------------------------------------------------------------GRAM PROBLEM SOLVED__________________________________________
+function addItemToCart(itemName, itemPrice, itemImg, itemWeight) {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const existingItem = cart.find(item => item.name === itemName);
+
+  if (existingItem) {
+      existingItem.count++;
+  } else {
+      cart.push({
+          name: itemName,
+          price: itemPrice,
+          img: itemImg,
+          weight: itemWeight, // Ensure itemWeight is a string or number
+          count: 1
+      });
+  }
+
+  localStorage.setItem('cart', JSON.stringify(cart));
+  document.dispatchEvent(new Event('cartUpdated'));
+}
+
+
+// ---------------------------------------------------------------------------------------------GRAM PROBLEM SOLVED__________________________________________
+function updateFooterCart() {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const cartCount = cart.reduce((count, item) => count + item.count, 0);
+  const totalPrice = cart.reduce((total, item) => total + (item.price * item.count), 0);
+
+  document.getElementById('cart-count').innerText = cartCount;
+  document.getElementById('total-price').innerText = `₹${totalPrice}`;
+}
+
+displayItems('Chowmin');  // Initial display
+
+fetch('footer.html')
+  .then(response => response.text())
+  .then(data => {
+    document.body.insertAdjacentHTML('beforeend', data);
+    const script = document.createElement('script');
+    script.src = 'footer.js';
+    script.onload = () => {
+      updateFooterCart();
+      document.getElementById('view-cart').addEventListener('click', () => {
+        window.location.href = 'AddtoCart.html';
+      });
+      document.addEventListener('cartUpdated', updateFooterCart);
+    };
+    document.body.appendChild(script);
+  });
+  
+// ------------------------------------------------------------------------------Quick View Cart integration------------------------------------------------
+</script> 
+
+<div class="scrolling-wrapper">
+    <div class="card" onclick="displayItems('Chowmin')"><img src="Image/food/chowmin.png"alt="Chowmin"class="menuhover"></div>
+    <div class="card" onclick="displayItems('Momo')"><img src="Image/food/momoms.webp"alt="Momos"class="menuhover"></div>
+    <div class="card" onclick="displayItems('Chickenchilli')"><img src= "Image/food/chicken.png"alt="Chicken chilli"class="menuhover"></div>
+    <div class="card" onclick="displayItems('Panner')"><img src="Image/food/panner.png"alt="Pannerchilli"class="menuhover"></div>
+    <div class="card" onclick="displayItems('Chaat')"><img src="Image/food/chaat.png"alt="Chaat"class="menuhover"></div>
+
+ 
+    
+    <!-- <div class="card" onclick="displayItems('household')"><img src="Image/oil.webp" alt="Household"></div> -->
+</div>
+
+</body>
+</html>

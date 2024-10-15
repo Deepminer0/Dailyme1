@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+
+html,body{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(252, 250, 250);
+    font-family: "Lexend", sans-serif;  
+    /* background-color: rgb(8, 8, 8); */
+
+}
+*{
+    margin: 0;
+   
+}
+.product-details {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    animation: fadeIn 1s ease-in-out;
+    overflow: hidden;
+}
+#product-description{
+    font-weight: 600;
+    float: left;
+    font-size: 8px;
+    color: green;
+    margin-top: -90px;
+    margin-left: 2px;
+  
+}
+
+
+
+/* Product Image Styling */
+#product-image {
+    width: 100%;
+    /* border: 1px solid; */
+    max-width: 400px;
+    /* border-radius: 15px; */
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    margin: 20px 0;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.4s ease;
+}
+
+#product-image:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    opacity: 0.9;
+}
+
+/* Text Styling */
+
+
+
+ 
+ p {
+    margin: 10px 0;
+    font-family: "Lexend", sans-serif;
+    color: #333;
+}
+
+/* Product Name */
+h1 {
+    font-family: "Lexend", sans-serif;   
+    text-align: left;
+    font-size: 2em;
+    color: #333;
+    transition: color 0.3s ease, transform 0.3s ease;
+    font-size: 17px;
+}
+
+
+/* Price and Weight */
+h2 {
+    /* font-size: 85px; */
+    color: green;
+    transition: color 0.3s ease, transform 0.3s ease;
+    font-family: "Lexend", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    
+    margin-top: 55px;
+    position: relative;
+    margin-right: 22%;
+    float: right;
+   
+   
+}
+
+
+
+h3 {
+    font-size: 1.5em;
+    color: #000000;
+    transition: color 0.3s ease, transform 0.3s ease;
+    border: 1px solid green;
+    width: 90px;
+    font-size: 11px;
+    background: rgb(237, 245, 237);
+    padding: 15px;
+    display: flex;
+    margin-top: 45px;
+    font-weight: 500;
+    border-radius: 5px;
+}
+
+h3:hover {
+    color: #444;
+}
+
+/* Description */
+p {
+    font-size: 1em;
+    color: #444;
+    line-height: 1.6;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+
+p:hover {
+    color: #666;
+    transform: translateY(2px);
+}
+
+
+#add-to-cart {
+    padding: 10px 15px;
+    font-size: 15px;
+    background-color: green;
+    color: #fff;
+    float: right;
+    margin-top: -12%;
+    font-weight: 700;
+    border: none;
+    position: relative;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    
+}
+
+#add-to-cart:hover {
+    background-color: green;
+    transform: scale(1.05);
+
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.containerbanner{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    
+    overflow-x: scroll;
+    /* overflow-y: auto; */
+}
+
+.bannerdelivery{
+    width: 180px; 
+    margin-top: 5%;
+    color: grey;
+    animation: fadeIn 1s ease-in-out;
+    font-size: 10px;
+    margin: 15px;
+    border-radius: 5px;
+    object-fit: cover;
+    border: 1px solid rgb(220, 221, 220);
+   
+}
+
+.bannerdelivery img{
+  height: 100px;
+  justify-content: center;
+  margin-top: -10px;
+}
+
+.repairbutton{
+    background-color: rgb(4, 136, 4);
+    border: none;
+    margin-left: 15px;
+    transition: 1s;
+    margin-top:4px;
+    
+    border-radius: 2px;
+    font-size: 10px;
+    color: white;
+    font-weight: 500;
+    width: 70px;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    margin-bottom: 9%
+}

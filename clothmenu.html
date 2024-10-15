@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="clothmenu.css">
+    <link rel="icon" type="image/x-icon" href="/Image/logooo.png">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TBT7HR0C4N">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TBT7HR0C4N');
+</script>
+    <title>Clothes | Delivery in minutes</title>
+</head>
+<body>
+  <div class="storebanner">
+    <!-- <img src="Image/bannertshirt.png" alt=""> -->
+    <!-- <h1 class="storename">Clothes Store</h1>
+    <h1 class="storedescription">Get your cloths deliver in <span>minutes</span></h1> -->
+</div>
+
+<div class="section"></div>
+
+<script>
+  
+  const items = {
+    Underwear: [
+      { img: "Image/cloths/rupa.webp", name: "Rupa Underwear ", weight: '90CM', price: "₹100" },
+      { img: "Image/cloths/rupa.webp", name: "Rupa Underwear ", weight: '85CM', price: "₹100" },
+     { img: "Image/cloths/rupablue.webp", name: "Rupa  Underwear Full", weight: '85CM', price: "₹110" },
+     { img: "Image/cloths/rupablue.webp", name: "Rupa Underwear Full ", weight: '90CM', price: "₹110" },
+     { img: "Image/cloths/microman.webp", name: "Micronman Underwear ", weight: '90CM', price: "₹110" },
+     { img: "Image/cloths/macho.jpg", name: "Macho Underwear", weight: '85CM', price: "₹100" },
+     { img: "Image/cloths/jokey.webp", name: "Jockey Full Underwear Black", weight: '85CM', price: "₹599" },
+     { img: "Image/cloths/boxer.jpg", name: "Jockey Full Boxer Underwear", weight: '85CM', price: "₹599" },
+    
+
+    ],
+    Vest: [
+     { img: "Image/cloths/vest.webp", name: "Rupa Frontline Vest", weight: '90CM', price: "₹110" },
+     { img: "Image/cloths/vest.webp", name: "Rupa Frontline Vest", weight: '85CM', price: "₹110" },
+     { img: "Image/cloths/vest.webp", name: "Rupa Frontline Vest", weight: '100CM', price: "₹110" },
+     { img: "Image/cloths/hunk.jpg", name: "Rupa Hunk Red Color Vest", weight: '85CM', price: "₹202" },
+     { img: "Image/cloths/strip.jpg", name: "HUNK 73 GYM VEST ASSORTED", weight: '85CM', price: "₹202" },
+     { img: "Image/cloths/hunkblue.jpg", name: "HUNK 7011 GYM VEST ASSORTED ", weight: '85CM', price: "₹213" },
+     { img: "Image/cloths/hunkcolor.jpg", name: "HUNK 96 MUSCLE TEE ASSORTED", weight: '85CM', price: "₹213" },
+     { img: "Image/cloths/bluestrip.jpg", name: "HUNK 82 MUSCLE TEE ASSORTED", weight: '85CM', price: "₹213" },
+     { img: "Image/cloths/grey.jpg", name: "HUNK 102 GYM VEST ASSORTED", weight: '85CM', price: "₹202" },
+ 
+    ],
+    Socks: [
+       { img: "Image/cloths/socks11.webp", name: "School white socks short", weight: '', price: "₹79" },
+       { img: "Image/cloths/socks1.webp", name: "School white socks Long", weight: '', price: "₹99" },
+       { img: "Image/cloths/black.webp", name: "School Black socks short", weight: '', price: "₹79" },
+       { img: "Image/cloths/socks2.webp", name: "School Black socks Long", weight: '', price: "₹99" },
+       { img: "Image/cloths/blue.webp", name: " School Blue socks short", weight: '', price: "₹79" },
+       { img: "Image/cloths/blue.webp", name: " School Blue socks Long", weight: '', price: "₹99" },
+       { img: "Image/cloths/set.png", name: "Cotton Black Long Socks", weight: '', price: "₹99" },
+       { img: "Image/cloths/sets.jpg", name: "Black Cotton short Socks", weight: '', price: "₹49" },
+       { img: "Image/cloths/winter.avif", name: "Winter Long Grey Socks", weight: '', price: "₹79" },
+       { img: "Image/cloths/grry.webp", name: "Winter Blue Grey socks", weight: '', price: "₹79" },
+       { img: "Image/cloths/ladies1.png", name: "Ladies Brown Toe Socks", weight: '', price: "₹89" },
+       { img: "Image/cloths/printed.png", name: "Printed Pink girl short socks", weight: '', price: "₹89" },
+       { img: "Image/cloths/printed1.png", name: "Printed Yellow girl short socks", weight: '', price: "₹79" },
+       { img: "Image/cloths/short.png", name: "Men extra short socks set 3pc", weight: '', price: "₹89" },
+       { img: "Image/cloths/socksss.webp", name: "Men Black extra short socks ", weight: '', price: "₹39" },
+       { img: "Image/cloths/baby.jpeg", name: "Baby pink socks", weight: '', price: "₹39" },
+       { img: "Image/cloths/babyset.avif", name: "Baby Woollen set socks 4pc", weight: '', price: "₹119" },
+       { img: "Image/cloths/silversock.jpg", name: "School Silver socks", weight: '', price: "₹49" },
+    
+    ],
+    Hankey: [
+     { img: "Image/cloths/hacky.avif", name: "Cotton White Blue Hanky", weight: '', price: "₹59" },
+     { img: "Image/cloths/hackyset.jpg", name: "Cotton White Blue Hanky 4pc Box", weight: '', price: "₹149" },
+     { img: "Image/cloths/hacky2.png", name: "Cotton  Blue Brown Hanky 4pc Box", weight: '', price: "₹149" },
+     { img: "Image/cloths/hacky3.jpg", name: "Cotton white hacky", weight: '', price: "₹59" },
+     { img: "Image/cloths/hacky11.jpg", name: "White Gamchi  cotton", weight: '', price: "₹149" },
+     { img: "Image/cloths/hacky22.webp", name: "White Gamchi design border", weight: '', price: "₹179" },
+     { img: "Image/cloths/hacky33.webp", name: "Orange gamchi design border", weight: '', price: "₹159" },
+     { img: "Image/cloths/lungi.jpg", name: "Blue strip cotton Lungi", weight: '', price: "₹599" },
+     { img: "Image/cloths/lungi1.jpg", name: "999 Blue strip cotton Lungi ", weight: '', price: "₹599" },
+     { img: "Image/cloths/yellow.webp", name: "Uellow Gamchi design broder", weight: '', price: "₹159" },
+    //  { img: "Image/cloths/hacky", name: "", weight: '', price: "₹" },
+
+     
+    ],
+   
+    tops: [
+      { img: "Image/cloths/girlvest.jpg", name: "Softline White Tops ", weight: '75CM', price: "₹119" },
+      { img: "Image/cloths/amulcomfy3.jpg", name: "Amul Comfy Girl White Tops", weight: '80CM', price: "₹79" },
+      { img: "Image/cloths/girlvest.jpg", name: "Softline White Tops ", weight: '85CM', price: "₹119" },
+      { img: "Image/cloths/blackvest.jpg", name: "Softline Black Tops", weight: '75CM', price: "₹119" },
+      { img: "Image/cloths/blackvest.jpg", name: "Softline Black Tops", weight: '80CM', price: "₹119" },
+      { img: "Image/cloths/amulcomfy2.jpg", name: "Amul Comfy Girl Pink Tops", weight: '85CM', price: "₹79" },
+      { img: "Image/cloths/amulcomfy1.jpg", name: "Amul Comfy Girl Skyblue Tops", weight: '75CM', price: "₹79" },
+      { img: "Image/cloths/amulcomfy1.jpg", name: "Amul Comfy Girl Skyblue Tops", weight: '80CM', price: "₹79" },
+      { img: "Image/cloths/blackvest.jpg", name: "Softline Black Tops", weight: '85CM', price: "₹119" },
+      { img: "Image/cloths/amulcomfy1.jpg", name: "Amul Comfy Girl Skyblue Tops", weight: '85CM', price: "₹79" },
+      { img: "Image/cloths/amulcomfy2.jpg", name: "Amul Comfy Girl Pink Tops", weight: '75CM', price: "₹79" },
+      { img: "Image/cloths/amulcomfy3.jpg", name: "Amul Comfy Girl White Tops", weight: '85CM', price: "₹79" },
+      { img: "Image/cloths/amulcomfy2.jpg", name: "Amul Comfy Girl Pink Tops", weight: '80CM', price: "₹79" },
+      { img: "Image/cloths/amulcomfy3.jpg", name: "Amul Comfy Girl White Tops", weight: '75CM', price: "₹79" },
+      { img: "Image/cloths/girlvest.jpg", name: "Softline White Tops ", weight: '80CM', price: "₹119" },
+ 
+     
+
+    ],
+
+    Innerwear: [
+      { img: "Image/cloths/inner1.jpg", name: "Lux Inferno Women Top", weight: '85CM', price: "₹378" },
+      { img: "Image/cloths/inner2.jpg", name: "Amul BodyWarner Men Lower", weight: '85CM', price: "₹350" },
+      { img: "Image/cloths/inner3.jpg", name: "Amul BodyWarner Men Top", weight: '85CM', price: "₹350" },
+      { img: "Image/cloths/inner4.jpg", name: "Lux inferno women set", weight: '85CM', price: "₹799" },
+      { img: "Image/cloths/lux-inferno.webp", name: "Lux Inferno Men Top", weight: '90CM', price: "₹350" },
+      { img: "Image/cloths/lux.png", name: "Lux Inferno Men top", weight: '85CM', price: "₹340" },
+      { img: "Image/cloths/lux2.png", name: "Lux Inferno Men top", weight: '95CM', price: "₹360" },
+      { img: "Image/cloths/Amul1.png", name: "Men Bodywarmer Lower", weight: '85CM', price: "₹360" },
+      { img: "Image/cloths/Amul2.png", name: "Men BodyWarmer top", weight: '85CM', price: "₹350" },
+      { img: "Image/cloths/Amul3.png", name: "Amul Body Warmer women set", weight: '85CM', price: "₹350" },
+  ],
+  Cap: [
+      { img: "Image/cloths/bluemulfer.jpg", name: "Navy Blue Muffler", weight: 'Kids', price: "₹130" },
+      { img: "Image/cloths/blackmulfer.jpg", name: "Black Mulfer", weight: 'Men', price: "₹150" },
+      { img: "Image/cloths/blackm.jpg", name: "Black Mulfer ", weight: 'kids', price: "₹130" },
+      { img: "Image/cloths/rangin.jpeg", name: "Purewool Blue mulfer", weight: 'Men', price: "₹180" },
+      { img: "Image/cloths/brownm.jpeg", name: "Brown simple Mufler", weight: 'Men', price: "₹150" },
+      { img: "Image/cloths/brownmwool.jpg", name: "Purewool Brown Mulfer", weight: 'Men', price: "₹" },
+      { img: "Image/cloths/cap1.jpg", name: "Black Cap and mufler", weight: 'Men', price: "₹250" },
+      { img: "Image/cloths/cap2.jpg", name: "Cream Cap winter", weight: 'Men', price: "₹230" },
+      { img: "Image/cloths/cap3.jpg", name: "Black Cap winter", weight: 'Men', price: "₹230" },
+      { img: "Image/cloths/blackcap.jpg", name: "Black wool Cap winter ", weight: 'Men', price: "₹250" },
+     
+     
+     
+  ]
+  };
+
+  
+
+  const section = document.querySelector(".section");
+
+  function displayItems(category) {
+  section.innerHTML = ""; // Clear previous items
+  items[category].forEach(item => {
+      section.innerHTML += `
+          <div class="box">
+              <img src="${item.img}" alt="${item.name}" onclick="openProductDetails('${item.img}', '${item.name}', '${item.weight}', '${item.price.replace('₹', '')}')">
+              <h3>${item.name}</h3>
+              <h6>${item.weight}</h6>
+              <h5>${item.price}</h5>
+              <button class="add-button" data-name="${item.name}" data-price="${item.price.replace('₹', '')}" data-weight="${item.weight}">ADD</button>
+          </div>
+      `;
+  });
+
+  document.querySelectorAll('.add-button').forEach(button => {
+      button.addEventListener('click', function() {
+          const itemName = this.getAttribute('data-name');
+          const itemPrice = parseFloat(this.getAttribute('data-price'));
+          const itemWeight = this.getAttribute('data-weight');
+          const itemImg = this.parentNode.querySelector('img').getAttribute('src');
+          addItemToCart(itemName, itemPrice, itemImg, itemWeight);
+      });
+  });
+}
+
+
+function openProductDetails(img, name, weight, price) {
+  const url = `product-details.html?img=${encodeURIComponent(img)}&name=${encodeURIComponent(name)}&weight=${encodeURIComponent(weight)}&price=${encodeURIComponent(price)}`;
+  window.location.href = url;
+}
+
+
+// ---------------------------------------------------------------------------------------------GRAM PROBLEM SOLVED__________________________________________
+function addItemToCart(itemName, itemPrice, itemImg, itemWeight) {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const existingItem = cart.find(item => item.name === itemName);
+
+  if (existingItem) {
+      existingItem.count++;
+  } else {
+      cart.push({
+          name: itemName,
+          price: itemPrice,
+          img: itemImg,
+          weight: itemWeight, // Ensure itemWeight is a string or number
+          count: 1
+      });
+  }
+
+  localStorage.setItem('cart', JSON.stringify(cart));
+  document.dispatchEvent(new Event('cartUpdated'));
+}
+
+
+// ---------------------------------------------------------------------------------------------GRAM PROBLEM SOLVED__________________________________________
+function updateFooterCart() {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const cartCount = cart.reduce((count, item) => count + item.count, 0);
+  const totalPrice = cart.reduce((total, item) => total + (item.price * item.count), 0);
+
+  document.getElementById('cart-count').innerText = cartCount;
+  document.getElementById('total-price').innerText = `₹${totalPrice}`;
+}
+
+displayItems('Vest');  // Initial display
+
+fetch('footer.html')
+  .then(response => response.text())
+  .then(data => {
+    document.body.insertAdjacentHTML('beforeend', data);
+    const script = document.createElement('script');
+    script.src = 'footer.js';
+    script.onload = () => {
+      updateFooterCart();
+      document.getElementById('view-cart').addEventListener('click', () => {
+        window.location.href = 'AddtoCart.html';
+      });
+      document.addEventListener('cartUpdated', updateFooterCart);
+    };
+    document.body.appendChild(script);
+  });
+  
+// ------------------------------------------------------------------------------Quick View Cart integration------------------------------------------------
+</script> 
+
+<div class="scrolling-wrapper">
+    <div class="card" onclick="displayItems('Underwear')"><img src="Image/cloths/underwear.png" alt="Underwear"class="menuhover"></div>
+    <div class="card" onclick="displayItems('Vest')"><img src="Image/cloths/vest.jpg" alt="vest"class="menuhover"></div>
+    <div class="card" onclick="displayItems('Socks')"><img src="Image/cloths/socks.png" alt="Socks"class="menuhover"></div>
+    <div class="card" onclick="displayItems('Hankey')"><img src="Image/cloths/rumal.png" alt="Hankey"class="menuhover"></div>
+    <div class="card" onclick="displayItems('tops')"><img src="Image/cloths/red.png" alt="tops" class="menuhover"></div>
+    <div class="card" onclick="displayItems('Innerwear')"><img src="Image/cloths/innerwear.png" alt="Gloves"class="menuhover"></div>
+    <div class="card" onclick="displayItems('Cap')"><img src="Image/cloths/cap.webp" alt="Gloves"class="menuhover"></div>
+    <!-- <div class="card" onclick="displayItems('household')"><img src="Image/oil.webp" alt="Household"></div> -->
+</div>
+
+</body>
+</html>

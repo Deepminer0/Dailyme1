@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Sweets.css">
+    <link rel="icon" type="image/x-icon" href="/Image/logooo.png">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TBT7HR0C4N">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TBT7HR0C4N');
+</script>
+    <title>Sweets | Delivery in minutes</title>
+</head>
+<body>
+  <div class="storebanner">
+    <!-- <img src="Image/Pujaitems/puja.png" alt=""> -->
+    <!-- <img src="Image/Pujaitems/fog.png" alt="" class="fog"> -->
+    <!-- <img src="Image/Pujaitems/fog.png" alt="" class="fog"> -->
+    <!-- <h1 class="storename">Sweet store</h1>
+    <h1 class="storedescription">Delicious sweets deliver in <span>minutes</span></h1> -->
+</div>
+
+<div class="section"></div>
+
+<script>
+  
+  const items = {
+   
+Sweets:[
+{ img: "https://m.media-amazon.com/images/I/31c2lisTCqL.jpg", name: "Besan Ladoo Pure Ghee", weight: "500g", price: "₹149" },
+  { img: "https://www.jhamasweets.com/cdn/shop/products/9o1a9857.jpg?v=1674301350", name: "Motichur Ladoo Pure Ghee", weight: "500g", price: "₹180" },
+  { img: "https://www.cakedeliverypathankot.com/wp-content/uploads/2022/10/Kaju-Katli-1kg-Desi-Ghee.jpg", name: "Kaju Katli Pure Ghee", weight: "200g", price: "₹150" },
+  { img: "https://www.jiomart.com/images/product/original/rvauzwuyew/sartaj-a2-desi-ghee-roasted-peda-500g-product-images-orvauzwuyew-p605136754-0-202309291634.jpg?im=Resize=(420,420)", name: "Peda Pure Ghee", weight: "250g", price: "₹150" },
+  { img: "https://www.madhursugar.com/uploads/recipes_images/thumb_img/thumb_1614021921.png", name: "Kalakand Pure Ghee", weight: "500g", price: "₹300" },
+  { img: "https://mirchi.com/os/cdn/content/images/khowa%20lai%20new%20shree%20ram%20tilkut%20bhandar_medium_0693877.webp", name: "Lai Pure Ghee", weight: "200g", price: "₹150" },
+  { img: "https://b.zmtcdn.com/data/dish_photos/711/1866761a515bdedf1fee3eceb85b1711.png", name: "Agra Sweets BanjaraPure Ghee", weight: "200g", price: "₹150" },
+  { img: "https://www.jiomart.com/images/product/original/rvuopjsnfg/ghasitaram-s-traditional-gulab-jamun-fried-in-pure-ghee-tin-gift-for-every-traditional-indian-festival-best-indian-sweets-500g-product-images-orvuopjsnfg-p594374493-1-202210101032.jpg?im=Resize=(420,420)", name: "Gulab Jamun Pure Ghee 15/pc", weight: "15/pc", price: "₹15" },
+  { img: "https://www.ramasrey.com/wp-content/uploads/2018/08/Rasgulla.jpg", name: "Sweet Rasgulla 15/pc", weight: "15/pc", price: "₹15" },
+
+
+],
+
+
+  };
+
+
+  
+
+  
+  const section = document.querySelector(".section");
+
+  function displayItems(category) {
+  section.innerHTML = ""; // Clear previous items
+  items[category].forEach(item => {
+      section.innerHTML += `
+          <div class="box">
+              <img src="${item.img}" alt="${item.name}" onclick="openProductDetails('${item.img}', '${item.name}', '${item.weight}', '${item.price.replace('₹', '')}')">
+              <h3>${item.name}</h3>
+              <h6>${item.weight}</h6>
+              <h5>${item.price}</h5>
+              <button class="add-button" data-name="${item.name}" data-price="${item.price.replace('₹', '')}" data-weight="${item.weight}">ADD</button>
+          </div>
+      `;
+  });
+
+  document.querySelectorAll('.add-button').forEach(button => {
+      button.addEventListener('click', function() {
+          const itemName = this.getAttribute('data-name');
+          const itemPrice = parseFloat(this.getAttribute('data-price'));
+          const itemWeight = this.getAttribute('data-weight');
+          const itemImg = this.parentNode.querySelector('img').getAttribute('src');
+          addItemToCart(itemName, itemPrice, itemImg, itemWeight);
+      });
+  });
+}
+
+
+function openProductDetails(img, name, weight, price) {
+  const url = `product-details.html?img=${encodeURIComponent(img)}&name=${encodeURIComponent(name)}&weight=${encodeURIComponent(weight)}&price=${encodeURIComponent(price)}`;
+  window.location.href = url;
+}
+
+
+// ---------------------------------------------------------------------------------------------GRAM PROBLEM SOLVED__________________________________________
+function addItemToCart(itemName, itemPrice, itemImg, itemWeight) {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const existingItem = cart.find(item => item.name === itemName);
+
+  if (existingItem) {
+      existingItem.count++;
+  } else {
+      cart.push({
+          name: itemName,
+          price: itemPrice,
+          img: itemImg,
+          weight: itemWeight, // Ensure itemWeight is a string or number
+          count: 1
+      });
+  }
+
+  localStorage.setItem('cart', JSON.stringify(cart));
+  document.dispatchEvent(new Event('cartUpdated'));
+}
+
+
+// ---------------------------------------------------------------------------------------------GRAM PROBLEM SOLVED__________________________________________
+function updateFooterCart() {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const cartCount = cart.reduce((count, item) => count + item.count, 0);
+  const totalPrice = cart.reduce((total, item) => total + (item.price * item.count), 0);
+
+  document.getElementById('cart-count').innerText = cartCount;
+  document.getElementById('total-price').innerText = `₹${totalPrice}`;
+}
+
+displayItems('Sweets');  // Initial display
+
+fetch('footer.html')
+  .then(response => response.text())
+  .then(data => {
+    document.body.insertAdjacentHTML('beforeend', data);
+    const script = document.createElement('script');
+    script.src = 'footer.js';
+    script.onload = () => {
+      updateFooterCart();
+      document.getElementById('view-cart').addEventListener('click', () => {
+        window.location.href = 'AddtoCart.html';
+      });
+      document.addEventListener('cartUpdated', updateFooterCart);
+    };
+    document.body.appendChild(script);
+  });
+  
+// ------------------------------------------------------------------------------Quick View Cart integration------------------------------------------------
+</script> 
+
+
+
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="com-menu.css">
+    <link rel="icon" type="image/x-icon" href="/Image/logooo.png">
+    <title>Peripherals | Delivery in minutes</title>
+</head>
+<body>
+  <div class="storebanner">
+    <!-- <img src="Image/pc.png".png alt=""> -->
+    <h1 class="storename">Computer Store</h1>
+    <h1 class="storedescription">Buy peripherals and repair service in <span>minutes</span></h1>
+</div>
+
+
+  <div class="section"></div>
+
+  <script>
+    const items = {
+      Mouse: [
+        { img: "Image/pc/hp1.jpg", name: "HP M070 Ergonomic Wired Mouse", weight: "Deepak", price: "₹299" },
+        { img: "Image/pc/hp2.jpg", name: "Lenovo 300 Wired Plug & Play USB Mouse", weight: "", price: "₹385" },
+        { img: "Image/pc/hp3.jpg", name: "Dell MS116 Wired Optical Mouse, 1000DPI,", weight: "", price: "₹290" },
+        { img: "Image/pc/hp4.jpg", name: "Lenovo 300 Wired Plug & Play USB Mouse", weight: "", price: "₹321" },
+        { img: "Image/pc/hp6.jpg", name: "ZEBRONICS  Wired USB Mouse", weight: "", price: "₹149" },
+        { img: "Image/pc/111.jpg", name: "HP S500 7YA11PA USB, Wireless", weight: "", price: "₹717" },
+        { img: "Image/pc/prodot.jpg", name: "ProDot ProSeries USB Wired", weight: "", price: "₹249" },
+        { img: "Image/pc/dell.jpg", name: "Dell WM126 Wireless Mouse,", weight: "", price: "₹799" },
+        { img: "Image/pc/zebronics.jpg", name: "ZEBRONICS Uzi High Precision Wired ", weight: "", price: "₹249" },
+       
+       
+      ],
+      Keyboard: [
+        { img: "Image/pc/keyboard.jpg", name: "ZEBRONICS USB Keyboard with Rupee Key", weight: "", price: "₹150" },
+        { img: "Image/pc/Key.jpg", name: "ZEBRONICS K24 USB Keyboard with Long Life", weight: "", price: "₹349" },
+        // { img: "Image/pc/both.jpg", name: "Dell KM3322W Wireless USB Keyboard and Mouse Combo,", weight: "", price: "₹1199" },
+        { img: "Image/pc/hpboth.jpg", name: "HP 150 Wired Keyboard and Mouse Combo ", weight: "", price: "₹765" },
+        { img: "Image/pc/zbtoh.jpg", name: "Zebronics Wired Keyboard and Mouse Combo ", weight: "", price: "₹496" },
+        { img: "Image/pc/hpg.jpg", name: "HP K300 Backlit Membrane Wired Gaming ,", weight: "", price: "₹899" },
+        { img: "Image/pc/color.jpg", name: "HP Gk400F Mechanical USB Gaming ", weight: "", price: "₹2101" },
+        
+      ],
+      Pendrive: [
+        { img: "Image/pc/pendrive.jpg", name: "HP Pendrive 64GB ", weight: "", price: "₹379" },
+        { img: "Image/pc/pendrive1.jpg", name: "SanDisk Cruzer Blade 64GB ", weight: "", price: "₹449" },
+        { img: "Image/pc/pendrive1.jpg", name: "SanDisk Cruzer Blade 32GB ", weight: "", price: "₹359" },
+        { img: "Image/pc/pendrive1.jpg", name: "SanDisk Cruzer Blade 8GB ", weight: "", price: "339" },
+        { img: "Image/pc/pendrive1.jpg", name: "SanDisk Cruzer Blade 16GB ", weight: "", price: "₹349" },
+        { img: "Image/pc/hp32.jpg", name: "HP v236w 32GB USB ", weight: "", price: "₹369" },
+      
+       
+      ],
+      Speaker: [
+        { img: "Image/pc/Speaker.jpg", name: "FRONTECH Powered Speakers Black", weight: "", price: "₹309" },
+        { img: "Image/pc/Speakerred.jpg", name: "FRONTECH Powered Speakers Red", weight: "", price: "₹279" },
+
+      ],
+      Monitor: [
+        { img: "Image/pc/frontech led.jpg", name: "FRONTECH 19 Inch HD LED Monitor | Refresh Rate 75 Hz", weight: "", price: "₹2812" },
+        { img: "Image/pc/m.jpg", name: "FRONTECH 19 Inch HD LED Monitor | Refresh Rate 60 Hz", weight: "", price: "₹2812" },
+        { img: "Image/pc/22.jpg", name: "FRONTECH 22 Inch HD LED Monitor | Refresh Rate 60 Hz", weight: "", price: "₹3839" },
+        { img: "Image/pc/zebr.jpg", name: "Zebronics Ea122 Led Monitor with Hd+", weight: "", price: "₹3999" },
+    
+      
+      ],
+      UPS: [
+        { img: "Image/pc/ups.jpg", name: "Microtek UPS Legend 750M ID2 230VAC/360W", weight: "", price: "₹3100" },
+        { img: "Image/pc/legend.jpg", name: "Microtek Line Interactive Legend 650 UPS System ", weight: "", price: "₹2299" },
+        { img: "Image/pc/zeups.jpg", name: "ZEBRONICS U735 600VA/360W UPS", weight: "", price: "₹2299" },
+        { img: "Image/pc/lumin.jpg", name: "Luminous UPS LB600PR0", weight: "", price: "₹2549" },
+        { img: "Image/pc/FOxin.jpg", name: "Foxin UPS Power Supply 360W ", weight: "", price: "₹2357" },
+        { img: "Image/pc/fingers.png", name: "Fast-Recharge UPS FR-630", weight: "", price: "₹2750" },
+        
+        
+      ],
+      Camera: [
+        { img: "Image/pc/webcam.jpg", name: "Logitech C270 Digital HD Webcam ", weight: "", price: "₹1899" },
+        { img: "Image/pc/camera1.jpg", name: "ZEBRONICS Zeb-Crystal Webcam ", weight: "", price: "₹699" },
+        { img: "Image/pc/camera2.jpg", name: "FRONTECH Digital Web Camera  ", weight: "", price: "₹629" },
+        { img: "Image/pc/hpwebcam.jpg", name: "HP 320 FHD Webcam 1080 Full HD 30fps", weight: "", price: "₹2899" },
+        { img: "Image/pc/Cameras.jpg", name: "Logitech Brio 100 Full HD Webcam", weight: "", price: "₹3329" },
+      
+       
+      ],
+      Cable: [
+        { img: "Image/pc/pccables.jpg", name: "Power Cord 1.8M Replacement Power Cable", weight: "", price: "₹298" },
+        // { img: "Image/VGA.jpg", name: " Quality Assured Male to Male VGA Cable 1.5 Meter", weight: "", price: "₹149" },
+        { img: "Image/pc/VGA.jpg", name: "VGA to VGA computer Cable 1.5 Meter", weight: "", price: "₹199" },
+        { img: "Image/pc/hdmi.jpg", name: "Sounce 1.5m High-Speed HDMI Cable ", weight: "", price: "₹149" },
+        { img: "Image/pc/ethernet.jpg", name: "Ethernet  Cable Internet 10mtr 550MHZ", weight: "", price: "₹286" },
+        { img: "Image/pc/pccables.jpg", name: "NISHTECH Computer Power Cable Cord ", weight: "", price: "₹142" },
+        { img: "Image/pc/hdmivga.jpg", name: "HDMI to VGA Cable Connector, Uni-Directional  ", weight: "", price: "₹325" },
+        { img: "Image/pc/port.jpg", name: "DMI to VGA Convertor", weight: "", price: "₹150" },
+        { img: "Image/pc/swticher.jpg", name: "USB Switch Selector", weight: "", price: "₹1299" },
+       
+      ]
+    };
+
+    const section = document.querySelector(".section");
+  
+    function displayItems(category) {
+    section.innerHTML = ""; // Clear previous items
+    items[category].forEach(item => {
+        section.innerHTML += `
+            <div class="box">
+                <img src="${item.img}" alt="${item.name}" onclick="openProductDetails('${item.img}', '${item.name}', '${item.weight}', '${item.price.replace('₹', '')}')">
+                <h3>${item.name}</h3>
+                <h6>${item.weight}</h6>
+                <h5>${item.price}</h5>
+                <button class="add-button" data-name="${item.name}" data-price="${item.price.replace('₹', '')}" data-weight="${item.weight}">ADD</button>
+            </div>
+        `;
+    });
+
+    document.querySelectorAll('.add-button').forEach(button => {
+        button.addEventListener('click', function() {
+            const itemName = this.getAttribute('data-name');
+            const itemPrice = parseFloat(this.getAttribute('data-price'));
+            const itemWeight = this.getAttribute('data-weight');
+            const itemImg = this.parentNode.querySelector('img').getAttribute('src');
+            addItemToCart(itemName, itemPrice, itemImg, itemWeight);
+        });
+    });
+}
+
+
+function openProductDetails(img, name, weight, price) {
+    const url = `product-details.html?img=${encodeURIComponent(img)}&name=${encodeURIComponent(name)}&weight=${encodeURIComponent(weight)}&price=${encodeURIComponent(price)}`;
+    window.location.href = url;
+}
+
+
+// ---------------------------------------------------------------------------------------------GRAM PROBLEM SOLVED__________________________________________
+function addItemToCart(itemName, itemPrice, itemImg, itemWeight) {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const existingItem = cart.find(item => item.name === itemName);
+
+    if (existingItem) {
+        existingItem.count++;
+    } else {
+        cart.push({
+            name: itemName,
+            price: itemPrice,
+            img: itemImg,
+            weight: itemWeight, // Ensure itemWeight is a string or number
+            count: 1
+        });
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    document.dispatchEvent(new Event('cartUpdated'));
+}
+
+
+// ---------------------------------------------------------------------------------------------GRAM PROBLEM SOLVED__________________________________________
+  function updateFooterCart() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartCount = cart.reduce((count, item) => count + item.count, 0);
+    const totalPrice = cart.reduce((total, item) => total + (item.price * item.count), 0);
+
+    document.getElementById('cart-count').innerText = cartCount;
+    document.getElementById('total-price').innerText = `₹${totalPrice}`;
+  }
+
+  displayItems('Mouse');  // Initial display
+
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.body.insertAdjacentHTML('beforeend', data);
+      const script = document.createElement('script');
+      script.src = 'footer.js';
+      script.onload = () => {
+        updateFooterCart();
+        document.getElementById('view-cart').addEventListener('click', () => {
+          window.location.href = 'AddtoCart.html';
+        });
+        document.addEventListener('cartUpdated', updateFooterCart);
+      };
+      document.body.appendChild(script);
+    });
+
+  </script>
+
+  <div class="scrolling-wrapper">
+    <div class="card" onclick="displayItems('Mouse')"><img src="Image/Mouse.webp" alt="Mouse" class="menuhover"></div>
+    <div class="card" onclick="displayItems('Keyboard')"><img src="Image/keyboard.webp" alt="Fruits" class="menuhover"></div>
+    <div class="card" onclick="displayItems('Pendrive')"><img src="Image/pendrive.png" alt="Oil" class="menuhover"></div>
+    <div class="card" onclick="displayItems('Speaker')"><img src="Image/Speakers.png" alt="Rice" class="menuhover"></div>
+    <div class="card" onclick="displayItems('Monitor')"><img src="Image/Monitorss.avif" alt="Milk Products" class="menuhover"></div>
+    <div class="card" onclick="displayItems('UPS')"><img src="Image/upss.png" alt="Snacks" class="menuhover"></div>
+    <div class="card" onclick="displayItems('Camera')"><img src="Image/Camera.png" alt="Cleaning Essentials" class="menuhover"></div>
+    <div class="card" onclick="displayItems('Cable')"><img src="Image/cable.webp" alt="Milk" class="menuhover"></div>
+    <!-- <div class="card" onclick="displayItems('household')"><img src="Image/oil.webp" alt="Household"></div> -->
+  </div>
+</body>
+</html>

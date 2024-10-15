@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bartan.css">
+    <link rel="icon" type="image/x-icon" href="/Image/logooo.png">
+    <title>Bartan | Delivery in minutes </title>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TBT7HR0C4N">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TBT7HR0C4N');
+</script>
+</head>
+<body>
+  <div class="storebanner">
+    <!-- <img src="Image/bartan/banner.png" alt=""> -->
+    <!-- <h1 class="storename">Bartan store</h1>
+    <h1 class="storedescription">Kitchenware items deliver in <span>minutes</span></h1> -->
+</div>
+
+<div class="section"></div>
+
+<script>
+  
+  const items = {
+    Hotpot: [
+      { img: "Image/bartan/cello1.jpg", name: "Cello Pink Design Hotpot  ", weight: '', price: "₹269" },
+      { img: "Image/bartan/cello14.jpeg", name: "Hot chef red hotpot ", weight: '', price: "₹299" },
+      { img: "Image/bartan/15.webp", name: "Cello Metallic Black Hotpot 3000  ", weight: '', price: "₹499" },
+      { img: "Image/bartan/hotpot.png", name: "Cello Hotpot Stenless still  ", weight: '', price: "₹599" },
+      { img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc40tXaFKiwHu50QLSU-cxpXIerWyRoxbocZXc4z4Qav7YvqXaLIsT8FHO92M1d_6vWcc&usqp=CAU", name: "Hot chef Green Hotpot  ", weight: '', price: "₹499" },
+      { img: "Image/bartan/celllos.jpg", name: "Cello Blue Hotpot Sephire ", weight: '', price: "₹269" },
+      { img: "Image/bartan/celllos.jpg", name: "Cello Blue Hotpot Sephire ", weight: '', price: "₹269" },
+    
+   
+],
+    Cooker: [
+    { img: "Image/bartan/hawkins.jpg", name: " Hawkins 5 ltr Classic Cooker", weight: 'Hawkins', price: "₹1939" },
+    { img: "Image/bartan/hakis.webp", name: " Hawkins 1.5 ltr Classic Cooker", weight: 'Hawkins', price: "₹1059" },
+      { img: "Image/bartan/ha3.jpg", name: " Hawkins 1.5 ltr Classic Cooker", weight: 'Hawkins', price: "₹1489" },
+      { img: "Image/bartan/centura.jpeg", name: "Hawkins 3 ltr Contura Black  ", weight: 'Hawkins', price: "₹199" },
+      { img: "Image/bartan/blackhaw.webp", name: "Hawkins 3 ltr  Black Insta  ", weight: 'Hawkins', price: "2235" },
+
+      { img: "Image/bartan/Hawkinds.jpg", name: "Hawkins 3.5 Litre Contura Black , ", weight: 'Hawkins', price: "₹2179" },
+      { img: "Image/bartan/red.jpg", name: " Hawkins Contura Aluminium 3 Litre ", weight: 'Hawkins', price: "₹2139" },
+      { img: "Image/bartan/bajaj.jpg", name: " Bajaj PCX 2 Majesty 2 Litres", weight: 'Bajaj', price: "₹999" },
+      { img: "Image/bartan/pigeon3.jpg", name: " Pigeon by Stovekraft 3 Litre", weight: 'Pegion', price: "₹759" },
+      { img: "Image/bartan/prestige.jpg", name: "Prestige 3 ltr Classic Cooker", weight: 'Prestige', price: "₹1390" },
+      { img: "Image/bartan/Prestigecolor.jpg", name: "Prestige Svachh 3 ltr Red Handi", weight: 'Prestige', price: "₹1489" },
+      { img: "Image/bartan/Prestige15.jpg", name: "Prestige Svachh1 5 ltr Cooker", weight: 'Prestige', price: "₹1518" },
+      { img: "Image/bartan/Prestige4.jpg", name: "Prestige 3 ltr Classic Cooker", weight: 'Prestige', price: "₹2029" },
+      { img: "Image/bartan/prestige5.jpg", name: "Prestige 5 ltr Classic Cooker", weight: 'Prestige', price: "₹1899" },
+      { img: "Image/bartan/bajaj1.jpg", name: "Bajaj New Shakti 3 Litres", weight: 'Bajaj', price: "₹909" },
+      { img: "Image/bartan/Bajajhandi.jpg", name: "Bajaj PCX 65D Aluminium 5 ltr", weight: 'Bajaj', price: "₹2525" },
+      { img: "Image/bartan/hotlinks.webp", name: "hotlinks 5 ltr Pressure cooker", weight: 'Hotlinks', price: "₹1300" },
+      { img: "Image/bartan/hotlinks.webp", name: "hotlinks 3 ltr Pressure cooker", weight: 'Hotlinks', price: "₹799" },
+      { img: "Image/bartan/united.jpg", name: " United Pressure Cooker 5 Litre,", weight: 'United', price: "₹1526" },
+      { img: "Image/bartan/united.jpg", name: " United Pressure Cooker 3 Litre,", weight: 'United', price: "₹1259" },
+   
+ 
+    ],
+    Mixture: [
+    { img: "Image/bartan/mixer1.webp", name: "Bajaj Bravo Dlx 500-Watt Mixer Grinder", weight: '', price: "₹2999" },
+    { img: "Image/bartan/Bajabmix.jpg", name: "BAJAJ 4701 GX 800 Mixer Grinder 4 Jars Red", weight: '', price: "₹4899" },
+    { img: "Image/bartan/mixures.jpg", name: "Bajaj Rex DLX Mixer Grinder 750W", weight: '', price: "2999" },
+    { img: "Image/appliance/51qPc9Lc5L._SL1500_-1.jpg", name: "BAJAJ Elegance Ninja Purple 500 Mixer Grinder ", weight: '', price: "₹2699" },
+    { img: "Image/bartan/bajajjuicer.jpg", name: "Bajaj Neo Jx4 450-Watt Juice Mixer ", weight: '', price: "₹2799" },
+ 
+    { img: "https://m.media-amazon.com/images/I/615RCJGmqOL._SL1500_.jpg", name: "Crompton DS 500 BLK 500-Watt Mixer  ", weight: '', price: "₹1899" },
+    { img: "https://m.media-amazon.com/images/I/61XFjyYcTaL._SL1500_.jpg", name: " Juicer Jar Sets 2pc", weight: 'Juicer', price: "₹499" },
+    { img: "https://m.media-amazon.com/images/I/51asUAVQV5L._SL1500_.jpg", name: " Steel Mixer Chutney Jar 350MI", weight: '', price: "₹259" },
+    { img: "https://5.imimg.com/data5/SELLER/Default/2023/9/342945100/PJ/SW/PS/6093690/gigawatts-mixer-grinder-blender-jars-combo-set-stainless-steel-with-transparent-lids.jpg", name: "Mixer Masala Jar set 3pc ", weight: '3pc', price: "₹699" },
+
+
+
+
+    
+    ],
+    Chulha: [
+    { img: "https://3.imimg.com/data3/QX/EL/MY-9739942/one-burner-stove-500x500.jpg", name: "Gas Chulha Stainless Steel ", weight: 'Single', price: "₹699" },
+    { img: "Image/bartan/chulha1.webp", name:  "Single Chulha Steel lite", weight: 'Single', price: "₹399" },
+    { img: "Image/bartan/chulha6.webp", name: "ISI 2 burner Stainless Steel", weight: 'Double', price: "₹1299" },
+    { img: "Image/bartan/chulha5.jpg", name: "S Burnerurya Gas double   ", weight: 'Double', price: "₹1199" },
+    { img: "Image/bartan/newburner.webp", name: "Surya Double Burner Gas Stove", weight: 'Double', price: "₹2299" },
+    { img: "Image/bartan/flame.webp", name: "Surya Flame Double Gas steel", weight: 'Double', price: "₹1799" },
+    { img: "Image/bartan/single.jpg", name: "Hotel Gas Chulha Single Blue", weight: 'Small', price: "₹1500" },
+    { img: "Image/bartan/single2.jpg", name: "Hotel Gas Chulha Single Black", weight: 'Big', price: "₹1450" },
+    { img: "Image/bartan/surga.webp", name: "Black Surya Flame Single Burner", weight: 'Single', price: "₹2299" },
+    { img: "Image/bartan/SUryaf.webp", name: "Black Suya Flame Double Burner", weight: 'Double', price: "₹2599" },
+    { img: "Image/bartan/streen.webp", name: "Stainless Steel Polished Burner", weight: 'Single', price: "₹2599" },
+    { img: "Image/bartan/gas.jpg", name: "ClimbHigh 5 Mtr ISI LPG Gas pipe", weight: 'Gas pipe', price: "₹150" },
+    { img: "Image/bartan/goodflame.webp", name: "Original Gas pipe", weight: 'Gas pipe', price: "₹150" },
+    { img: "Image/bartan/Regulator.webp", name: "Chota Cylinder Regulator", weight: 'Small regulator', price: "₹110" },
+    { img: "Image/bartan/Regulator1.webp", name: "Big Cylinder Regulator", weight: 'BharatGas Big Regulator', price: "₹499" },
+    { img: "Image/bartan/lighter.jpg", name: "Gas Chulha Lighter lite", weight: 'Lighter', price: "₹59" },
+    { img: "Image/bartan/lighter.png", name: "Everyday Steel Lighter", weight: 'Everday Lighter', price: "₹139" },
+
+
+
+     
+    ],
+    Glass: [
+      
+    { img: "Image/bartan/plainglass.jpeg", name: "Plain Steel Glass 2pc", weight: 'Plain Heavy', price: "₹99" },
+    { img: "Image/bartan/lite.jpg", name: "Lite Fancy Glass 2pc", weight: 'Light Strip', price: "₹79" },
+    { img: "Image/bartan/plainglasss.jpeg", name: "Plain Heavy Steel Glass 2pc", weight: 'Plain Heavy', price: "₹119" },
+    { img: "Image/bartan/designglas.webp", name: "Design Glass Curve 2pc", weight: 'Curve Plain', price: "₹119" },
+    { img: "Image/bartan/curve6pc.webp", name: "Damru Steel Glass 6pc", weight: 'Damru Strip', price: "₹220" },
+    { img: "Image/bartan/plaincurveline.webp", name: "Plain Stylish curve Glass", weight: 'Stylish Curve', price: "₹49" },
+    { img: "Image/bartan/Glassmine.webp", name: "Pendulam Design Stell Glass", weight: 'Pendulam Design', price: "₹49" },
+    { img: "Image/bartan/simple.jpeg", name: "Heavy Plain Stell Glass", weight: 'Heavy Plain', price: "₹49" },
+    { img: "Image/bartan/glass6.jpg", name: "Steel Design Glass 6pc ", weight: 'Straight Design', price: "₹239" },
+    { img: "Image/bartan/glassme.webp", name: "Small Tea Glass 6pc", weight: 'Small Size strip', price: "₹99" },
+    { img: "Image/bartan/lineglass.webp", name: "Steel Lining Heavy Glass", weight: 'Damru Line Heavy', price: "₹59" },
+    { img: "Image/bartan/Smalllglass.webp", name: "Small Steel Glass Strip", weight: 'Strip Design', price: "₹19" },
+  
+    ],
+    Kettle: [
+      { img: "Image/bartan/51Q11RNy8dL._SL1200_.jpg", name: "Prestige 1.5 Litres Electric Kettle ", weight: '1500 WATT ', price: "₹699" },
+      { img: "Image/bartan/41JJWFk14hL._SL1300_.jpg", name: "Pigeon Multiuse Kettle 1.2ltr ", weight: 'Pigeon', price: "₹899" },
+      { img: "Image/bartan/61yL5Y7JVaS._SL1500_.jpg", name: "Milton Euroline Steel 1.ltr", weight: '1500 WATT ', price: "₹699" },
+      { img: "Image/bartan/cellothu.jpg", name: "Cello Flipstyle Thermosteel Water Bottle", weight: '1000ml', price: "₹899" },
+      { img: "Image/bartan/51DGcy8eBCL._SL1080_.jpg", name: "Pigeon Electric Kettle 1.5ltr", weight: 'Pigeon', price: "₹549" },
+    { img: "Image/bartan/619UcRiJZiL._SL1500_.jpg", name: "Cello Swift Thermosteel Water Bottle", weight: ' 1000ml', price: "₹949" },
+    { img: "Image/bartan/81elEZiyPfL._SL1500_.jpg", name: "Cello Lifestyle Thermosteel Water Bottle", weight: '500ml', price: "₹629" },
+    { img: "Image/bartan/51z0TKNFFIL._SL1500_.jpg", name: "Cello Swift Stainless Steel Double Walled Flask Bottle", weight: '1500ml', price: "1539₹" },
+    { img: "Image/bartan/61c-GtJ+0eL._SL1500_.jpg", name: "Milton Duo DLX 1000 Thermosteel", weight: '1000ml', price: "₹1135" },
+    { img: "Image/bartan/818jrzDczjL._SL1500_.jpg", name: "Milton Thermosteel Flip Lid Flask", weight: '1000ml', price: "₹999" },
+    { img: "Image/bartan/71b15oh7EEL._SL1500_.jpg", name: "Milton Stellar 8 Thermosteel Water Jug", weight: '7.6ltr', price: "₹1548" },
+    { img: "Image/bartan/818jrzDczjL._SL1500_.jpg", name: "Milton Thermosteel Plain Lid Flask", weight: '500ml', price: "₹704" },
+    
+     
+
+    ],
+    tamba:[
+    { img: "Image/bartan/tamba.webp", name: "Tamba Jug Classic", weight: '1000ml', price: "₹699" },
+    { img: "Image/bartan/61NclCSNoUL._SL1280_.jpg", name: "Tamba Jug Classic ", weight: '2ltr', price: "₹1150" },
+    { img: "Image/bartan/61NclCSNoUL._SL1280_.jpg", name: "Tamba Jug Classic ", weight: '1000ml', price: "₹899" },
+    { img: "Image/bartan/61NclCSNoUL._SL1280_.jpg", name: "Tamba Jug Classic ", weight: '750ml', price: "₹799" },
+    { img: "Image/bartan/stree-shine-copper-items-6-500x500.webp", name: "Tamba Thermus Classic ", weight: '1000ml', price: "₹900" },
+    { img: "Image/bartan/plain-copper-glass-500x500.webp", name: "Tamba Glass Natural", weight: 'Glass', price: "₹80" },
+    { img: "Image/bartan/loti.jpg", name: "Tamba Lota", weight: 'Big size', price: "₹399" },
+    { img: "Image/bartan/bdUf6SKiDS.jpg", name: "Tamba Lota ", weight: 'Medium size', price: "₹229" },
+    { img: "Image/bartan/71N5ha684YS.jpg", name: "Small Tamba Lota", weight: 'Small Size', price: "₹89" },
+    { img: "Image/bartan/tambaka.jpg", name: "Tamba Katori classic ", weight: 'Small size', price: "₹50" },
+    // { img: "Image/bartan/", name: "Tamba ", weight: '', price: "₹" },
+    // { img: "Image/bartan/", name: "Tamba ", weight: '', price: "₹" },
+  ],
+  pital:[
+
+  { img: "Image/bartan/51sZMdKthPL.jpg", name: "Kuber Brass Diya for Puja", weight: '2pc', price: "₹150" },
+  { img: "Image/bartan/71EjosCftJL._SL1500_.jpg", name: "Kuber Brass Diya for Puja", weight: '2pc', price: "₹150" },
+  { img: "Image/bartan/51dSg0KNKPL._SL1500_.jpg", name: "Narayan Dia Akhand ", weight: '100g/1pc', price: "₹199" },
+  { img: "Image/bartan/41Pa0rRjP1L._SL1100_.jpg", name: " Nitya Pyali Puja Diya ", weight: '74gm /1pc', price: "₹139" },
+  { img: "Image/bartan/61WjFzyw7ML._SL1500_.jpg", name: " Brass Devdas Diya Oil Puja", weight: '1pc', price: "₹160" },
+  { img: "Image/bartan/51wzG9AB+ZL._SL1500_.jpg", name: "Traditional Kerala Brass Ghee Diya", weight: '1pc', price: "₹499" },
+  
+
+  
+  { img: "Image/bartan/51wtF2vliPL.jpg", name: " Kuber Diya with stand ", weight: '1pc', price: "₹199" },
+ 
+
+  { img: "Image/bartan/31+rVneg9mS.jpg", name: " Pital Small Size Diya", weight: '1pc', price: "₹60" },
+   { img: "Image/bartan/71eEssruV-L._SL1500_.jpg", name: " Pital Small Size Diya", weight: '2pc', price: "₹100" },
+ { img: "Image/bartan/dupdan.jpg", name: " Pure Brass & Wooden Dupdani", weight: 'Big size', price: "₹250" },
+  
+
+ { img: "Image/bartan/glassleft.png", name: "Premium Muradabadi Glass Design ", weight: 'Heavy material/1pc', price: "₹249" },
+  { img: "Image/bartan/61c3hzsDnFL._SL1500_.jpg", name: "Pure Brass Jug Classic ", weight:'1000ml', price: "₹899" },
+  { img: "Image/bartan/41GraHGuvTL._AC_UF894,1000_QL80_.jpg", name: "Premium Colorful Muradabadi Glass ", weight:'Heavy material/1pc', price: "₹180" },
+
+
+
+  
+  { img: "Image/bartan/51xt97fyfTL._SL1500_.jpg", name: "Puja Pital Chota size  ", weight: '2pc', price: "₹59" },
+  { img: "Image/bartan/71qN0bxAjvL._SL1500_-removebg-preview.png", name: " Swastik Akhand Jotyi", weight: 'Small', price: "₹180" },
+  { img: "Image/bartan/71qN0bxAjvL._SL1500_-removebg-preview.png", name: " Swastik Akhand Jotyi", weight: 'Medium', price: "₹250" },
+  
+  { img: "Image/bartan/71qN0bxAjvL._SL1500_-removebg-preview.png", name: " Swastik Akhand Jotyi", weight: 'Big', price: "₹320" },
+  { img: "Image/bartan/71tafHcHgrL._SL1500_.jpg", name: "Big Brass Panch Aarti Diya  ", weight: '1pc', price: "₹379" },
+  { img: "Image/bartan/71PPL5uj2yL._SL1500_.jpg", name: " Peetal Puja Diya with Handle", weight: '1pc', price: "₹289" },
+  { img: "Image/bartan/61M9DlfnpzL._SL1500_.jpg", name: " Pure Brass Bell Pooja", weight: 'Small/1pc', price: "₹159" },
+  { img: "Image/bartan/61M9DlfnpzL._SL1500_.jpg", name: " Pure Brass Bell Pooja", weight: 'Big/1pc', price: "₹289" },
+  { img: "Image/bartan/71bjjEIMQJL._SL1500_.jpg", name: "Kanshita's  Brass Diya ", weight: 'Heavy/6pc', price: "₹499" },
+  { img: "Image/bartan/713ITArT4wL._SL1500_.jpg", name: " Brass Diya with Tall Stand", weight: '1pc', price: "₹599" },
+
+  { img: "Image/bartan/61bU8k+MqnL._SL1500_.jpg", name: "Pure Pital Laxmi Ganesh Murti ", weight: '7CM', price: "₹799" },
+  { img: "Image/bartan/laxmiganeh.jpg", name: " Pure Brass Laxmi Ganesh Murti ", weight: '1set', price: "₹1049" },
+  { img: "Image/bartan/laxmigameshhh.jpg", name: " Laxmi Ganesh Small set", weight: '1set', price: "₹399" },
+  { img: "Image/bartan/tha.webp", name: " Heavy Pure Pital Puja Thali ", weight: 'Heavy material', price: "₹999" },
+  { img: "Image/bartan/71kHIc-pipL._SL1500_.jpg", name: "Pure Heavy Brass Singhasan  ", weight: '12CM', price: "₹499" },
+  { img: "Image/bartan/71kHIc-pipL._SL1500_.jpg", name: "Pure Heavy Brass Singhasan  ", weight: '16CM', price: "₹599" },
+  { img: "Image/bartan/61fF02uEO5L._SL1500_.jpg", name: "Pure Heavy Brass Singhasan  ", weight: '12CM', price: "₹999" },
+ 
+  { img: "Image/bartan/71mp4B9bjmL._SL1500_.jpg", name: "Heavy Brass big Singhasan ", weight: '5X4 inch', price: "₹499" },
+  { img: "Image/bartan/61TuD4kI4-L._SL1500_.jpg", name: " Small Pure Brass Agardan for Puja", weight: '1pc', price: "₹69" },
+  { img: "Image/bartan/dias.png", name: " Agardani Pure Heavy Brass", weight: '1pc', price: "₹250" },
+  { img: "Image/bartan/brass-flower-basket-for-puja.jpg", name: "Golden Brass Puja Tokri", weight: 'Heavy Material/ Small size', price: "₹399" },
+  { img: "Image/bartan/brass-flower-basket-for-puja.jpg", name: "Golden Brass Puja Tokri", weight: 'Heavy Material/ Big size', price: "₹499" },
+  { img: "Image/bartan/brass-round-mini-flower-basket-500x500.webp", name: " Pure Brass Cirlce Puja Tokri", weight: 'Heavy material /1pc', price: "₹" },
+ 
+  { img: "Image/bartan/brass-pooja-flower-basket-1000x1000.webp", name: "Round Brass Pooja Tokri ", weight: 'Heavy Material', price: "₹" },
+  { img: "Image/bartan/brassbucketforservingfoodhokoya_1.webp", name: " Pure Pital Puja Balti ", weight: 'Small Size', price: "₹599" },
+  { img: "Image/bartan/71XMcZyS8wL._SL1500_.jpg", name: " Pure pital Puja Lotni", weight: 'Small Size', price: "₹69" },
+  { img: "Image/bartan/714JCXz1gSL._SL1500_.jpg", name: " Brass Heavy Crystal Small Lota", weight: 'Small size', price: "₹329" },
+  { img: "Image/bartan/6166I7yCYzL._SL1500_.jpg", name: " Brass lota Pooja Item ", weight: 'Heavy material', price: "₹369" },
+ 
+  { img: "Image/bartan/41Haw2s7QCL.jpg", name: " Navyaksh Brass Lota Kalash", weight: '1pc', price: "₹289" },
+  { img: "Image/bartan/brassloa.jpg", name: "Brass Design Muradabadi ", weight: 'Small size', price: "₹259" },
+  { img: "Image/bartan/91k38If-jVL._SL1500_.jpg", name: " Pital Plate for Worship", weight: 'Heavy Material', price: "₹239" },
+  
+
+  ],
+Ken:[
+// { img: "Image/bartan/ken.png", name: "Steel Akhand - Jointless Milk Can", weight: '1000ml', price: "₹300" },
+{ img: "Image/bartan/61WnXl6i7tL.jpg", name: "Dabba Stainless Steel 5kg", weight: '5Kg Capacity', price: "₹350" },
+{ img: "Image/bartan/chota.webp", name: "Dabba Stainless Steel Small Set", weight: 'Masala Box', price: "₹259" },
+{ img: "Image/bartan/puri-dabba-large-4.webp", name: " Plain Stainless Puri Dabba ", weight: 'Medium Size', price: "₹150" },
+{ img: "Image/bartan/dghfh.jpeg", name: "Plain Stainless Cover Puri Dabba", weight: 'STeel Dabba', price: "₹160" },
+{ img: "Image/bartan/steel-dabba-589.webp", name: "Stainless Steel Dabba ", weight: '3Kg Capacity', price: "₹280" },
+{ img: "Image/bartan/dabba.webp", name: "Halka Puri Dabba ", weight: 'Medium Size ', price: "₹80" },
+// { img: "Image/bartan/ui.webp", name: "", weight: '', price: "₹" },
+// { img: "Image/bartan/.jpg", name: "", weight: '', price: "₹" },
+// { img: "Image/bartan/.jpg", name: "", weight: '', price: "₹" },
+// { img: "Image/bartan/.jpg", name: "", weight: '', price: "₹" },
+  ],
+Tiffin:[
+ { img: "Image/bartan/Tiffin.png", name: "Lux box 3 Tier Container", weight: 'Strong Steel', price: "₹249" },
+ { img: "Image/bartan/1M0A8956.webp", name: "Lux box 5 Tier Container", weight: 'Strong Steel', price: "₹359" },
+ { img: "Image/bartan/1M0A8966.webp", name: "Lux box 4 Tier Container", weight: 'Strong Steel', price: "₹329" },
+ { img: "Image/bartan/11.webp", name: "Lunch Box Tier Container" , weight: 'Strong Steel', price: "₹190" },
+ { img: "Image/bartan/765548.webp", name: "Lux box 1 Layer for kids", weight: 'Sqaure Shape', price: "₹240" },
+ { img: "Image/bartan/51944-1_24ALDGMD.webp", name: "Lux box classic for kids", weight: 'Oval Shape', price: "₹279" },
+ { img: "Image/bartan/77307-1_2K4T60FA.jpg", name: "Lux box Single Circle for kids", weight: '1 tier circle', price: "₹249" },
+ { img: "Image/bartan/qq.webp", name: "Rectangle lux box for kids", weight: 'Stainless Steel', price: "₹299" },
+ { img: "Image/bartan/1_a2b0c13b-a533-472b-b4c5-032c6e68a9bb.webp", name: "4 Container Bombay Tiffin", weight: 'Stainless STeel', price: "₹559" },
+ { img: "Image/bartan/45.webp", name: "3 Container Bombay Tiffin", weight: 'Stainless STeel', price: "₹449" },
+ { img: "Image/bartan/DC1985_1_1.jpg", name: "2 Container Bombay Tiffin", weight: 'Stainless STeel', price: "₹299" },
+
+{ img: "Image/bartan/dabba.webp", name: "Halka Puri Dabba ", weight: 'Medium Size ', price: "₹89" },
+{ img: "Image/bartan/dghfh.jpeg", name: "Plain Stainless Cover Puri Dabba", weight: 'STeel Dabba', price: "₹160" },
+  ]
+  };
+
+
+  
+
+  
+  const section = document.querySelector(".section");
+
+  function displayItems(category) {
+  section.innerHTML = ""; // Clear previous items
+  items[category].forEach(item => {
+      section.innerHTML += `
+          <div class="box">
+              <img src="${item.img}" alt="${item.name}" onclick="openProductDetails('${item.img}', '${item.name}', '${item.weight}', '${item.price.replace('₹', '')}')">
+              <h3>${item.name}</h3>
+              <h6>${item.weight}</h6>
+              <h5>${item.price}</h5>
+              <button class="add-button" data-name="${item.name}" data-price="${item.price.replace('₹', '')}" data-weight="${item.weight}">ADD</button>
+          </div>
+      `;
+  });
+
+  document.querySelectorAll('.add-button').forEach(button => {
+      button.addEventListener('click', function() {
+          const itemName = this.getAttribute('data-name');
+          const itemPrice = parseFloat(this.getAttribute('data-price'));
+          const itemWeight = this.getAttribute('data-weight');
+          const itemImg = this.parentNode.querySelector('img').getAttribute('src');
+          addItemToCart(itemName, itemPrice, itemImg, itemWeight);
+      });
+  });
+}
+
+
+function openProductDetails(img, name, weight, price) {
+  const url = `product-details.html?img=${encodeURIComponent(img)}&name=${encodeURIComponent(name)}&weight=${encodeURIComponent(weight)}&price=${encodeURIComponent(price)}`;
+  window.location.href = url;
+}
+
+
+// ---------------------------------------------------------------------------------------------GRAM PROBLEM SOLVED__________________________________________
+function addItemToCart(itemName, itemPrice, itemImg, itemWeight) {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const existingItem = cart.find(item => item.name === itemName);
+
+  if (existingItem) {
+      existingItem.count++;
+  } else {
+      cart.push({
+          name: itemName,
+          price: itemPrice,
+          img: itemImg,
+          weight: itemWeight, // Ensure itemWeight is a string or number
+          count: 1
+      });
+  }
+
+  localStorage.setItem('cart', JSON.stringify(cart));
+  document.dispatchEvent(new Event('cartUpdated'));
+}
+
+
+// ---------------------------------------------------------------------------------------------GRAM PROBLEM SOLVED__________________________________________
+function updateFooterCart() {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const cartCount = cart.reduce((count, item) => count + item.count, 0);
+  const totalPrice = cart.reduce((total, item) => total + (item.price * item.count), 0);
+
+  document.getElementById('cart-count').innerText = cartCount;
+  document.getElementById('total-price').innerText = `₹${totalPrice}`;
+}
+
+displayItems('Tiffin');  // Initial display
+
+fetch('footer.html')
+  .then(response => response.text())
+  .then(data => {
+    document.body.insertAdjacentHTML('beforeend', data);
+    const script = document.createElement('script');
+    script.src = 'footer.js';
+    script.onload = () => {
+      updateFooterCart();
+      document.getElementById('view-cart').addEventListener('click', () => {
+        window.location.href = 'AddtoCart.html';
+      });
+      document.addEventListener('cartUpdated', updateFooterCart);
+    };
+    document.body.appendChild(script);
+  });
+  
+// ------------------------------------------------------------------------------Quick View Cart integration------------------------------------------------
+</script> 
+
+<div class="scrolling-wrapper">
+  <div class="card" onclick="displayItems('Cooker')"><img src="Image/bartan/cooker.webp"alt="Cooker"class="menuhover"></div>
+    <div class="card" onclick="displayItems('Hotpot')"><img src="Image/bartan/hotpot.png"alt="Hotpot"class="menuhover"></div>
+    <div class="card" onclick="displayItems('pital')"><img src= "Image/bartan/dias.png"alt="Kettle"class="menuhover"></div>
+    <div class="card" onclick="displayItems('Mixture')"><img src= "Image/mixtures.png"alt="Micture"class="menuhover"></div>
+    <div class="card" onclick="displayItems('tamba')"><img src= "Image/bartan/tamba.webp"alt="Kettle"class="menuhover"></div>
+    <div class="card" onclick="displayItems('Chulha')"><img src="Image/bartan/Chulha.png"alt="Chulha"class="menuhover"></div>
+    <div class="card" onclick="displayItems('Glass')"><img src="Image/bartan/glass.png"alt="Glass"class="menuhover"></div>
+    <div class="card" onclick="displayItems('Kettle')"><img src= "Image/bartan/kettke.png"alt="Kettle"class="menuhover"></div>
+    <div class="card" onclick="displayItems('Ken')"><img src= "Image/bartan/Ken.png"alt="Kettle"class="menuhover"></div>
+    <div class="card" onclick="displayItems('Tiffin')"><img src= "Image/bartan/Tiffin.png"alt="Kettle"class="menuhover"></div>
+
+</div>
+
+</body>
+</html>

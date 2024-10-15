@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Laudrystore.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="storebanner">
+        <img src="Image/washinemachines.webp".png alt="">
+        <h1 class="storename">Laundry Store</h1>
+        <h1 class="storedescription"> Sameday Washing and dry  <span>Pickup & delivery</span></h1>
+    </div>
+    
+    
+    <div class="servicebox">
+      <h2>Quick <br><span> Clean and Delivery</span></h2>
+      <a href="#">Repair Now</a>
+      <img src="Image/delivery.png" alt="" srcset="">
+      
+    </div>
+    <h3 class="services">Our cleaning Services</h3>
+    <div class="conatiner">
+        <div class="productbox">
+            <a href="E-menu.html"><img src="Image/scooldress.webp" alt="" srcset=""><h6>School Dress</h6></div>
+            </a>
+        <div class="productbox">
+            <a href="E-menu.html"><img src="Image/blanket.webp" alt="" srcset=""><h6>Chaddar</h6></div>
+            </a>
+        <div class="productbox">
+            <a href="E-menu.html"><img src="Image/iron.webp" alt="" srcset=""><h6>Ironing</h6></div>
+            </a>
+        <div class="productbox">
+            <a href="E-menu.html"><img src="Image/suit.webp" alt="" srcset=""><h6>Suit</h6></div>
+            </a>
+        <div class="productbox">
+            <a href="E-menu.html"><img src="Image/sweater.png" alt="" srcset=""><h6>Sweater</h6></div>
+            </a>
+        <div class="productbox">
+            <a href="E-menu.html"><img src="Image/swingmachine.png" alt="" srcset=""><h6>Raffu</h6></div>
+            </a>
+        <div class="productbox">
+            <a href="E-menu.html"><img src="Image/saris.png" alt="" srcset=""><h6>Sari</h6></div>
+            </a>
+        <div class="productbox">
+            <a href="com-menu.html"><img src="Image/otshirt.webp" alt="" srcset=""><h6>Shirt</h6></div>
+            </a>
+        <div class="productbox">
+            <a href="com-menu.html"><img src="Image/bag.webp" alt="" srcset=""><h6>Bag</h6></div>
+            </a>
+    </div>
+
+
+<!-- ----------------------------scrolling product------------------------------------- -->
+ <!-- <h3> Pupular Deals</h3>
+ <h6 class="discount">Discount Price</h6>
+<div class="containerbanner">
+    <div class="bannerdelivery">Sonpapdi
+      <img src="Image/bulb.webp" alt="Sonpapdi" srcset=""> 
+      <button class="repairbutton" data-service="Sonpapdi">ADD</button>
+    </div>
+      
+    <div class="bannerdelivery">
+      <img src="Image/iron.webp" alt="Sonpapdi" srcset="">
+      <button class="repairbutton" data-service="Sonpapdi">ADD</button>
+      
+    </div>
+
+    <div class="bannerdelivery">
+      <img src="Image/chargers.avif" alt="CadBerry-celebration" srcset="">
+      <button class="repairbutton" data-service="Chocolate">ADD</button>
+      
+    </div>
+    
+    <div class="bannerdelivery">
+      <img src="Image/Electricchulha.webp" alt="Rangoli" srcset="">
+      <button class="repairbutton" data-service="Rangoli">ADD</button>
+      
+    </div>
+    
+    <div class="bannerdelivery">
+      <img src="Image/bulbss.webp" alt="Rangoli" srcset="">
+      <button class="repairbutton" data-service="Rangoli">ADD</button>
+      
+    </div>
+</div> -->
+
+
+
+
+
+
+
+
+
+<!-- ---------------------scroll product javascript---------------------- -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.repairbutton').forEach(button => {
+            button.addEventListener('click', function() {
+                const serviceType = this.getAttribute('data-service');
+                addServiceToCart(serviceType);
+            });
+        });
+
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('beforeend', data);
+                const script = document.createElement('script');
+                script.src = 'footer.js';
+                script.onload = () => {
+                    updateFooterCart();
+                    document.getElementById('view-cart').addEventListener('click', () => {
+                        window.location.href = 'addtocart.html';
+                    });
+                    document.addEventListener('cartUpdated', updateFooterCart);
+                };
+                document.body.appendChild(script);
+            });
+    });
+
+    function addServiceToCart(serviceType) {
+        const services = {
+            'Sonpapdi': { name: "Sonpapdi", img: "Image/Purplesonpapdi.png", price: 80 },
+            'Chocolate': { name: "CadBerry-celebration", img: "Image/celebration.avif", price: 150 },
+            'Rangoli': { name: "Rangoli", img: "Image/rangoli.png", price: 60 },
+          
+        };
+
+        const service = services[serviceType];
+        if (!service) {
+            console.error("Service not found:", serviceType);
+            return;
+        }
+
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const existingItem = cart.find(item => item.name === service.name && item.img === service.img);
+
+        if (existingItem) {
+            existingItem.count += 1;
+        } else {
+            cart.push({ name: service.name, price: service.price, img: service.img, count: 1 });
+        }
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+        document.dispatchEvent(new CustomEvent('cartUpdated'));
+    }
+
+    function updateFooterCart() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartCount = cart.reduce((count, item) => count + item.count, 0);
+        document.getElementById('cart-count').innerText = cartCount;
+    }
+</script>
+
+</body>
+</html>
